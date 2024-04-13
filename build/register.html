@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body class="bg-[url('../imgs/bg-register.png')] bg-no-repeat bg-cover flex justify-center items-center h-[100vh]">
+
+        <div class="my-16 bg-blue-600 rounded-3xl grid justify-center items-center "> 
+            <form class="mx-10  lg:mx-16 w-[30vh] lg:w-[37vh]" method="post" action="signIn.php">
+                <div class="grid justify-center mt-8">
+                    <img class="w-52" src="./imgs/logo-white.svg" alt="">
+                </div>
+                <div class="flex bg-blue-300 p-3 gap-2 my-8 rounded-xl">
+                <img class="w-7" src="./imgs/email.svg" alt="">
+                <input class="bg-blue-300 w-full border-none outline-none" type="text" name="user"
+                placeholder="User name" required=""> 
+                </div>
+
+                <div class="flex bg-blue-300 p-3 gap-2 my-8 rounded-xl">
+                    <img class="w-7" src="./imgs/email.svg" alt="">
+                    <input class="bg-blue-300 w-full border-none outline-none" type="text" name="carnet"
+                    placeholder="Carnet" required=""> 
+                </div>
+
+                <div class="flex bg-blue-300 p-3 gap-2 my-8 rounded-xl">
+                    <img class="w-7" src="./imgs/email.svg" alt="">
+                    <input class="bg-blue-300 w-full border-none outline-none" type="email" name="email"
+                    placeholder="Email" required=""> 
+                </div>
+
+                <div class="flex bg-blue-300 p-3 gap-2 my-8 rounded-xl">
+                    <img class="w-7" src="./imgs/email.svg" alt="">
+                    <input class="bg-blue-300 w-full border-none outline-none" type="Password" name="password"
+                    placeholder="Password" required=""> 
+                </div>
+                <input class="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full my-8" type="submit" name="btn-sing-up" value="Next">
+            </form>
+        </div>
+</body>
+</html>
