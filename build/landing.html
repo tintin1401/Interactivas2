@@ -8,8 +8,50 @@
 </head>
 <body>
 
-    <header>
+    <header class="bg-[url('../imgs/bg-register.png')] bg-cover bg-center text-white h-[35rem]">
 
+        <nav class="right-0 left-0 flex items-center justify-between">
+            <div class="flex m-10">
+                <img class="max-w-40 h-auto" src="./imgs/logo-white.svg" alt="logo">
+            </div>
+
+            <div class="hidden lg:flex m-10">
+                <ul class="text-white lg:flex lg:gap-8">
+                    <li><a href="#" class="text-lg font-bold no-underline">Get Started</a></li>
+                    <li><a href="#" class="text-lg font-bold no-underline">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="block lg:hidden m-10">
+                <input type="checkbox" id="menu-toggle" class="hidden fixed z-[4] top-16 right-10">
+                <label for="menu-toggle" class="fixed z-[3] top-16 right-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </label>
+               
+                <div id="mobile-menu" class="hidden lg:hidden">
+                    <ul class="text-white grid fixed w-1/2 h-screen bg-black bg-opacity-95 content-center text-left z-[2] top-0 right-0 pl-8">
+                        <li><a href="#" class="text-lg font-bold no-underline">Get Started</a></li>
+                        <li><a href="#" class="text-lg font-bold no-underline">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>
+
+        <section class="m-10 max-w-[380px] justify-center">
+            <h1 class="text-5xl font-bold">A smarter way to work</h1>
+        
+            <section>
+                <p class="text-lg mt-6 leading-6">With Cronos, you can drive clarity and impact at scale by connecting work and workflows to company-wide goals</p>
+    
+                <div class="mt-6 flex justify-between items-center text-center">
+                    <a class="inline-block bg-orange-500 text-white p-[0.40rem_1rem] rounded-md font-bold text-base w-1/2" href="#">Login</a>
+                    <a class="inline-block bg-orange-500 text-white p-[0.40rem_2rem] rounded-md font-bold text-base w-1/2 ml-2" href="#">Get Started</a>
+                </div>
+            </section>
+        </section>
     </header>
 
     <main>
@@ -102,8 +144,69 @@
     
 
 
-    <footer>
+    <footer class="bg-blue-900 w-full grid">
+        <div class="grid w-[85vw] m-[2.5rem_auto] grid-cols-[repeat(auto-fit,minmax(200px,_1fr))] gap-8 text-white leading-9">
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,_1fr))] gap-8">
+                <section>
+                    <h3 class="text-2xl font-bold mb-2">Cronos</h3>
+                    <ul class="list-none">
+                        <li><a class="text-lg text-white no-underline" href="#">Login</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Starter</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Prices</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Advanced</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Enterprice</a></li>
+                    </ul>
+                </section>
 
+                <section>
+                    <h3 class="text-2xl font-bold mb-2">About Us</h3>
+                    <ul class="list-none">
+                        <li><a class="text-lg text-white no-underline" href="#">Company</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Management Team</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Customers</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Diversity</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Careers</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-bold mb-2">Workflow Solution</h3>
+                    <ul class="list-none">
+                        <li><a class="text-lg text-white no-underline" href="#">Project management</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Goal manegement</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Agile management</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Task management</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Productivity increase</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-bold mb-2">Resourses</h3>
+                    <ul class="list-none">
+                        <li><a class="text-lg text-white no-underline" href="#">Help center</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Forum</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Attendance</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Partners</a></li>
+                        <li><a class="text-lg text-white no-underline" href="#">Community</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+    
+            menuToggle.addEventListener("change", function () {
+                if (menuToggle.checked) {
+                    mobileMenu.classList.remove("hidden");
+                } else {
+                    mobileMenu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
