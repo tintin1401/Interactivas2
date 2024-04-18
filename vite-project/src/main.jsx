@@ -1,9 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+
+import { Card } from './Card.jsx'
+import { Login } from './Login.jsx'
+import { Register } from './register.jsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  
+    <Register/>
+  
+ 
+ 
+ 
 )
