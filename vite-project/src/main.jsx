@@ -8,9 +8,8 @@ import { Register } from './register.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
-    <Register/>
-  
- 
- 
+    //<Register/>
+
+
  
 )
