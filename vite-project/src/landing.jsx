@@ -6,9 +6,9 @@ import { Footer } from './Footer.jsx'
 import logo from "./assets/imgs/logo-white.svg";
 import AreaC from "./assets/imgs/Area-Contaduria-Privada11.jpg";
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <body>
+export function Landing() {
+    return (
+        <body>
         <header className="bg-[url('./assets/imgs/bg-register.png')] bg-cover bg-center text-white h-[35rem]">
         
             <section className="m-10 justify-center absolute">
@@ -53,7 +53,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </section>
         </main>
 
-        <Footer/>
-        
-    </body>
-)
+        <Footer/> 
+        </body>
+    )
+}
