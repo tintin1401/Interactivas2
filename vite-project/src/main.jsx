@@ -6,19 +6,15 @@ import { Login } from './Login.jsx'
 import { Register } from './register.jsx'
 import { Calendar } from './Calendar.jsx'
 import { Sidebar } from './sidebar.jsx'
+import { Landing } from './landing.jsx'
 import { ToggleSidebar } from './ToggleSidebar.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-    <div class="flex h-screen">
-        <Sidebar/>
-        <main className='m-10'>
-        <ToggleSidebar/>
-        <Calendar/>
-        </main>
-    </div>
+    //<Landing/>
+    <Register/>
    
 
 
