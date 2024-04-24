@@ -5,6 +5,7 @@ import { Card } from './Card.jsx'
 import { Login } from './Login.jsx'
 import { Register } from './register.jsx'
 import { Practice } from './Practice.jsx'
+import { MultiStepper } from './components/MultiStepper.jsx'
 
 
 

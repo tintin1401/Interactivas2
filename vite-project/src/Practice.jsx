@@ -33,7 +33,7 @@ function fakeFetch(date, { signal }) {
   });
 }
 
-const initialValue = dayjs('2022-04-17');
+const initialValue = dayjs('2024-04-21');
 
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
@@ -80,6 +80,7 @@ export  function Practice() {
 
   React.useEffect(() => {
     fetchHighlightedDays(initialValue);
+    
     // abort request on unmount
     return () => requestAbortController.current?.abort();
   }, []);
@@ -94,6 +95,8 @@ export  function Practice() {
     setIsLoading(true);
     setHighlightedDays([]);
     fetchHighlightedDays(date);
+    
+
   };
 
   return (
