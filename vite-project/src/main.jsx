@@ -6,6 +6,9 @@ import { Login } from './Login.jsx'
 import { Register } from './register.jsx'
 import { Practice } from './Practice.jsx'
 import { MultiStepper } from './components/MultiStepper.jsx'
+import { Sidebar } from './sidebar.jsx'
+import { Landing } from './landing.jsx'
+import { ToggleSidebar } from './ToggleSidebar.jsx'
 
 
 
