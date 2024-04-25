@@ -1,20 +1,23 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import logo from "../assets/imgs/logo-white.svg";
 
-import { CreateAcount } from '../CreateAcount.jsx';
-const steps = ['Create an account', 'Information about your health', 'Information about you'];
+import { CreateAcount } from "../CreateAcount.jsx";
+import { Health } from "../Steppers/Health.jsx";
+import { Finish } from "../Steppers/Finish.jsx";
+const steps = ["Create an account", "Health","Finish"];
 
-export  function MultiStepper() {
+export function MultiStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
   const isStepOptional = (step) => {
-    return step === 1;
+    return step === 4;
   };
 
   const isStepSkipped = (step) => {
@@ -61,17 +64,14 @@ export  function MultiStepper() {
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <Typography variant="caption">Optional</Typography>
-            );
-          }
           if (isStepSkipped(index)) {
             stepProps.completed = false;
           }
           return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
+            <Step className="mb-8" key={label} {...stepProps}>
+              <StepLabel className=" text-white" {...labelProps}>
+                {label}
+              </StepLabel>
             </Step>
           );
         })}
@@ -81,34 +81,60 @@ export  function MultiStepper() {
           <Typography sx={{ mt: 2, mb: 1 }}>
             All steps completed - you&apos;re finished
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Box sx={{ flex: '1 1 auto' }} />
+          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+            <Box sx={{ flex: "1 1 auto" }} />
             <Button onClick={handleReset}>Reset</Button>
           </Box>
         </React.Fragment>
       ) : (
-        <React.Fragment>
-        {activeStep === 1 && <CreateAcount />}
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button className='bg-red-500 text-red-500'
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-            {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
-              </Button>
-            )}
+        <div className=" bg-blue-600 rounded-3xl grid justify-center items-center ">
+          <div className="mx-10  lg:mx-16 w-[30vh] lg:w-[37vh]">
+            <div className="grid justify-center my-8">
+              <img className="w-52" src={logo} alt="" />
+            </div>
+            {activeStep === 0 && <CreateAcount />}
+            {activeStep === 1 && <Health />}
+            {activeStep === 2 && <Finish />}
+            <div className="flex gap-4">
+              {activeStep > 0 && (
+                <input
+                  className=" text-white p-2 bg-blue-400 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-blue-400"
+                  onClick={handleBack}
+                  type="submit"
+                  value="Back"
+                />
+              )}
+              <input
+                onClick={() => {
+                  if (activeStep === 0) {
+                    const isValid =
+                      document.querySelector("#Fullname").value.length > 0 &&
+                      document.querySelector("#Email").value.length > 0 &&
+                      document.querySelector("#Password").value.length > 0 &&
+                      document.querySelector("#Password").value.length > 0;
+                    console.log("Prueba" + isValid);
+                    if (isValid === true) handleNext();
+                  } else {
+                    handleNext();
+                  }
+                  // else alert("Please enter your name");}
+                }}
+                //onClick={handleNext}
+                className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500"
+                type="submit"
+                name="btn-login"
+                value={activeStep === steps.length - 1 ? "Finish" : "Next"}
+              />
+            </div>
 
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-            </Button>
-          </Box>
-        </React.Fragment>
+            <p className="text-white m-5">
+              Already create an account?
+              <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200">
+                Login
+              </span>
+            </p>
+          </div>
+        </div>
       )}
     </Box>
   );

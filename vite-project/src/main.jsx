@@ -14,7 +14,7 @@ import { ToggleSidebar } from './ToggleSidebar.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-    <Practice/>
+    <Register/>
    
 
 
