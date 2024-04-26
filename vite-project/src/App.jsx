@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ToggleSidebar from './ToggleSidebar.jsx'
 import Sidebar from './sidebar.jsx'
 import { Practice } from './Practice.jsx';
+import { CtaContainer } from './CtaContainer.jsx'
 
 function App(){
     const[sidebarToggle, setSidebarToggle] = useState(false)
@@ -11,7 +12,7 @@ function App(){
         <main className="m-10">
             <ToggleSidebar sidebarToggle={sidebarToggle}
             setSidebarToggle={setSidebarToggle}/>
-            <Practice/>
+            <CtaContainer/>
         </main>
     </div>
     )
