@@ -13,7 +13,7 @@ export function CtaContainer({userName, taskNumber, button}){
                   </div>
                 </section>
 
-                <div>
+                <div className='lg:block hidden'>
                   <img src={ctaImg} alt="cta-img"/>
                 </div>
               </section>
