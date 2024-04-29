@@ -8,7 +8,9 @@ import { Practice } from "./Practice.jsx";
 import { MultiStepper } from "./components/MultiStepper.jsx";
 import { Landing } from "./landing.jsx";
 import App from "./App.jsx";
+import {Calendar} from "./Calendar.jsx";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-<App />
+<App/>
 );

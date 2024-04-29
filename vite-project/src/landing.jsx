@@ -29,7 +29,7 @@ export function Landing() {
         <main>
             <section className="bg-blue-900 lg:p-16 p-10">
                 <h2 className="text-white font-bold mb-[2rem] font-main text-3xl">HOW TO USE</h2>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,_1fr))] gap-[2.75rem]">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(210px,_1fr))] gap-[2.75rem]">
                 <StepsContainer stepNumber="1" title="First Step" description="Be a student at the University of Costa Rica"/>
                 <StepsContainer stepNumber="2" title="Second Step" description="Be enrolled in at least one course of the semester"/>
                 <StepsContainer stepNumber="3" title="Third Step" description="Register in the app and fill in the blanks"/>

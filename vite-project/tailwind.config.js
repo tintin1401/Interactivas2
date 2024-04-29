@@ -3,8 +3,15 @@ export default {
   content: ["./index.html",
   "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-<<<<<<< HEAD
     extend: {
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'sd': '1023px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       keyframes: {
         'blob-bounce': {
           '0%': {
@@ -28,17 +35,6 @@ export default {
         'blob-bounce': 'blob-bounce 5s infinite ease',
       },
     },
-=======
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'sd': '1023px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
-    extend: {},
->>>>>>> d727c4a621f15c1fc22976b7d6bd0ea1fe1b568f
   },
   plugins: [],
 }

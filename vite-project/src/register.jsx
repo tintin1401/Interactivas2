@@ -11,7 +11,7 @@ export function Register() {
       style={{ backgroundImage: "url(../src/assets/imgs/bg-register.png" }}
     >
       <div className="grid justify-center">
-        <MultiStepper/>
+        <Login/>
       </div>
     </div>
   );
