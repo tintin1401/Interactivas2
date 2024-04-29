@@ -9,6 +9,7 @@ import { MultiStepper } from "./components/MultiStepper.jsx";
 import { Landing } from "./landing.jsx";
 import App from "./App.jsx";
 import {Calendar} from "./Calendar.jsx";
+import {EventCardCta} from "./EventCardCta.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
