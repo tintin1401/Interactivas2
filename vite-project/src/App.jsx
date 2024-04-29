@@ -8,11 +8,11 @@ import { Schedule } from "./Schedule"
 function App(){
     const[sidebarToggle, setSidebarToggle] = useState(false)
     const events = [
-        { "id": 1, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint? Neque veniam architecto animi earum consequatur. Eaque,illo sequi alias suscipit modi commodi quae odio." }
+        { "id": 1, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?."}
     ]
 
     return(
-        <div className="flex h-screen">
+        <div className="flex">
         <Sidebar sidebarToggle={sidebarToggle}/>
         <main className="lg:grid lg:justify-center content-center w-screen">
             <div className="mt-10 ml-5 mr-5 mb-0">

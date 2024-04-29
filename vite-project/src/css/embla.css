@@ -3,21 +3,21 @@
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
-    --slide-size: 20%; /* define cuantas cartas salen en el carousel. El default es 70% */
+    --slide-size: 22%; /* define cuantas cartas salen en el carousel. El default es 70% */
 }
 
 .embla-card {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 170px;
 }
 
 .embla-bg-card {
-    width: 140px;
-    height: 140px;
+    width: 210px;
+    height: 160px;
 }
 
 .embla-height-cta {
-    height: 9.5rem;
+    height: 12rem;
 }
 
 @media (max-width: 768px) {

@@ -19,7 +19,7 @@ export function EventCard({ image, title, date, event, hour, description }) {
                         <h4 className="text-white text-xl">{hour}</h4>
                     </div>
 
-                    <p className="text-white text-sm line-clamp-2">{description}</p>
+                    <p className="text-white text-sm">{description}</p>
 
                 </div>
         </div>
