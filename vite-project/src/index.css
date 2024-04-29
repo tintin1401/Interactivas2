@@ -11,3 +11,59 @@ input::placeholder {
 .css-j5w0w9-MuiStepConnector-root{
     display: none;
 }
+
+
+.css-31ca4x-MuiPickersFadeTransitionGroup-root{
+    color: #2841A5 !important;
+}
+
+.css-1rv8zyt-MuiStack-root{
+    display: grid !important;
+    justify-content: center;
+    align-items: center;  
+}
+
+.css-11a8txn-MuiStack-root{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root{
+    font-size: 1rem !important;
+}
+
+
+.css-e784if-MuiTypography-root{
+    display: grid !important;
+    justify-content: center;
+    color: #2841A5;
+    font-size: 1.5rem !important;
+}
+
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+    background-color: #E86D0E !important;
+    font-size: 1rem !important;
+}
+
+.css-1vooibu-MuiSvgIcon-root{
+    color: #E86D0E !important;
+}
+
+
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel{
+    color: black !important;
+    font-size: large !important;
+}
+
+.css-flbe84-MuiDayCalendar-weekContainer{
+    margin-top: 0.5rem !important;
+}
+
+
+.css-i4bv87-MuiSvgIcon-root{
+    color: #2841A5;
+}
+
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected){
+    font-size: 1rem !important;
+    color: #2841A5;
+}
