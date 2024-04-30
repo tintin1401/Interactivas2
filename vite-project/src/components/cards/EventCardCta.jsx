@@ -1,6 +1,6 @@
 import { Schedule } from "./Schedule"
 
-import "./index.css";
+import "../../index.css";
 
 export function EventCardCta() {
     const events = [

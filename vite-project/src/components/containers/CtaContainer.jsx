@@ -1,6 +1,6 @@
-import './index.css'
+import "../../index.css";
 import PropTypes from 'prop-types';
-import ctaImg from "./assets/imgs/cta-img.png";
+import ctaImg from "../../assets/imgs/cta-img.png";
 export function CtaContainer({userName, taskNumber, button}){
     return(
         <section className='bg-blue-700 lg:p-0 md:p-0 p-11 w-[min(72vw,_90vw)] grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-8 rounded-[3rem] text-white items-center'>

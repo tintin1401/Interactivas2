@@ -1,5 +1,5 @@
-import "./index.css";
-import { InputLogin } from "./InputLogin.jsx";
+import "../../index.css";
+import { InputLogin } from "../inputs/InputLogin.jsx";
 
 export function CreateAcount() {
   return (

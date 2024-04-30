@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { StepsContainer } from './StepsContainer.jsx'
-import { ContainerAboutUs } from './ContainerAboutUs.jsx'
-import { Footer } from './Footer.jsx'
-import logo from "./assets/imgs/logo-white.svg";
-import AreaC from "./assets/imgs/Area-Contaduria-Privada11.jpg";
+import { StepsContainer } from '../../containers/StepsContainer.jsx'
+import { ContainerAboutUs } from '../../containers/ContainerAboutUs.jsx'
+import { Footer } from '../../footer/Footer.jsx'
+import logo from "../../../assets/imgs/logo-white.svg";
+import AreaC from "../../../assets/imgs/Area-Contaduria-Privada11.jpg";
 
 export function Landing() {
     return (

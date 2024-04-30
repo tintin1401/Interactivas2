@@ -1,4 +1,4 @@
-import './index.css'
+import "../../index.css";
 export function StepsContainer({stepNumber,title,description}){
     return(
         <div className="bg-blue-950 p-[1.5rem] rounded-[0.625rem]">

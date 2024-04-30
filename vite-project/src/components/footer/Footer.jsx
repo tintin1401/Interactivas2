@@ -1,4 +1,4 @@
-import './index.css'
+import "../../index.css";
 import { FooterLinks } from './FooterLinks.jsx'
 export function Footer(){
     return(

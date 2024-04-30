@@ -1,5 +1,5 @@
-import './index.css'
-import logo from "./assets/imgs/logo-white.svg";
+import "../../../index.css";
+import logo from "../../../assets/imgs/logo-white.svg";
 const Sidebar = ({sidebarToggle}) =>{
     return(
         <aside className={`w-64 bg-blue-900 text-white ${sidebarToggle? '' : 'hidden'} sd:block fixed inset-y-0 z-50 lg:static`}>

@@ -1,6 +1,5 @@
-import "../index.css";
-import { Selected } from "../components/Selected.jsx";
-import { InputLogin } from "../InputLogin.jsx";
+import "../../index.css";
+import { Selected } from "../selected/Selected.jsx";
 
 export function Health() {
   const hours = [

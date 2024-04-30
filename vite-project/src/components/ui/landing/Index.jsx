@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import EmblaCarousel from './EmblaCarousel'
-import '../src/css/base.css'
-import '../src/css/sandbox.css'
-import '../src/css/embla.css'
-import './index.css'
+import EmblaCarousel from '../emblaCarousel/EmblaCarousel.jsx'
+import '../../../css/embla.css'
+import '../../../css/sandbox.css'
+import '../../../css/embla.css'
+import '../../../index.css'
 
 
 export function Index() {

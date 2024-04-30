@@ -1,4 +1,4 @@
-import './index.css'
+import "../../index.css";
 export function Card({title,description,img}){
     return(
         <div className='rounded-lg shadow-lg'>

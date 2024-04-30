@@ -1,4 +1,4 @@
-import './index.css'
+import "../../../index.css";
 const ToggleSidebar = ({sidebarToggle, setSidebarToggle}) =>{
     return(
         <button className="lg:hidden fixed top-9 right-10 z-50" onClick={() => setSidebarToggle(!sidebarToggle)}>

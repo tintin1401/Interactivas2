@@ -1,6 +1,6 @@
-import "./index.css";
-import logo from "./assets/imgs/logo-white.svg";
-import { InputLogin } from "./InputLogin.jsx";
+import "../../index.css";
+import logo from "../../assets/imgs/logo-white.svg";
+import { InputLogin } from "../inputs/InputLogin.jsx";
 
 export function Login() {
   return (

@@ -1,4 +1,4 @@
-import "./index.css";
+import "../../index.css";
 import { EventCard } from "./EventCard";
 
 export function Schedule({items}) {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ToggleSidebar from './ToggleSidebar.jsx'
-import Sidebar from './sidebar.jsx'
-import { Practice } from './Practice.jsx';
-import { CtaContainer } from './CtaContainer.jsx'
-import { Index } from './Index.jsx';
-import { Schedule } from "./Schedule"
+import ToggleSidebar from './components/layout/sidebar/ToggleSidebar.jsx'
+import Sidebar from './components/layout/sidebar/Sidebar.jsx'
+//import { Practice } from './Practice.jsx';
+import { CtaContainer } from './components/containers/CtaContainer.jsx';
+import { Index } from './/components/ui/landing/Index.jsx';
+import { Schedule } from "./components/cards/Schedule"
 function App(){
     const[sidebarToggle, setSidebarToggle] = useState(false)
     const events = [

@@ -5,9 +5,9 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import logo from "../assets/imgs/logo-white.svg";
+import logo from "../../assets/imgs/logo-white.svg";
 
-import { CreateAcount } from "../CreateAcount.jsx";
+import { CreateAcount } from "../auth/CreateAcount.jsx";
 import { Health } from "../Steppers/Health.jsx";
 import { Finish } from "../Steppers/Finish.jsx";
 const steps = ["Create an account", "Health","Finish"];
@@ -98,7 +98,7 @@ export function MultiStepper() {
             <div className="flex gap-4">
               {activeStep > 0 && (
                 <input
-                  className=" text-white p-2 bg-blue-400 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-blue-400"
+                  className=" text-white p-2 bg-blue-400 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-blue-400 text-base"
                   onClick={handleBack}
                   type="submit"
                   value="Back"
@@ -120,14 +120,14 @@ export function MultiStepper() {
                   // else alert("Please enter your name");}
                 }}
                 //onClick={handleNext}
-                className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500"
+                className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500 text-lg"
                 type="submit"
                 name="btn-login"
                 value={activeStep === steps.length - 1 ? "Finish" : "Next"}
               />
             </div>
 
-            <p className="text-white m-5">
+            <p className="text-white m-5 text-xl">
               Already create an account?
               <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200">
                 Login

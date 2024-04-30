@@ -1,4 +1,4 @@
-import "./index.css";
+import "../../index.css";
 
 export function EventCard({ image, title, date, event, hour, description }) {
     return (

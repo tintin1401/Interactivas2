@@ -1,4 +1,4 @@
-import './index.css'
+import "../../index.css";
 export function FooterLinks({title,link1,link2,link3,link4,link5}){
     return(
         <section>

@@ -1,4 +1,4 @@
-import './index.css'
+import "../../index.css";
 export function ContainerAboutUs({title,description,icon}){
     return(
         <div className="grid grid-cols-1 my-[2rem] justify-center gap-4 lg:flex">
