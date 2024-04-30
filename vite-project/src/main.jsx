@@ -13,5 +13,5 @@ import {EventCardCta} from "./components/cards/EventCardCta.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-<Landing/>
+<Auth/>
 );

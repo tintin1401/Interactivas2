@@ -5,7 +5,7 @@ export function Selected({label,options}) {
     <>
       <form className="max-w-sm mx-auto my-4">
         <label
-          for="countries"
+          htmlFor="countries"
           className="block mb-2 text-base font-medium text-white"
         >
           {label}

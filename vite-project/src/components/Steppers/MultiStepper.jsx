@@ -1,3 +1,5 @@
+import  {useStepper} from '../hooks/useStepper.js';
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
@@ -12,61 +14,19 @@ import { Health } from "../Steppers/Health.jsx";
 import { Finish } from "../Steppers/Finish.jsx";
 const steps = ["Create an account", "Health","Finish"];
 
+
 export function MultiStepper() {
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set());
-
-  const isStepOptional = (step) => {
-    return step === 4;
-  };
-
-  const isStepSkipped = (step) => {
-    return skipped.has(step);
-  };
-
-  const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
+  const { activeStep, handleNext, handleBack } = useStepper();
+  
 
   return (
     <Box>
       <Stepper activeStep={activeStep}>
+        
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
+          
           return (
             <Step className="mb-8" key={label} {...stepProps}>
               <StepLabel className=" text-white" {...labelProps}>
@@ -77,15 +37,7 @@ export function MultiStepper() {
         })}
       </Stepper>
       {activeStep === steps.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
+       <h2>Thank you</h2>
       ) : (
         <div className=" bg-blue-600 rounded-3xl grid justify-center items-center ">
           <div className="mx-10  lg:mx-16 w-[30vh] lg:w-[37vh]">
@@ -127,7 +79,7 @@ export function MultiStepper() {
               />
             </div>
 
-            <p className="text-white m-5 text-xl">
+            <p className="text-white m-5 text-base">
               Already create an account?
               <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200">
                 Login
