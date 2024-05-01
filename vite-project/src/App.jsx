@@ -14,7 +14,7 @@ function App(){
     return(
         <div className="flex">
         <Sidebar sidebarToggle={sidebarToggle}/>
-        <main className="lg:grid lg:justify-center content-center w-screen">
+        <main className="lg:grid lg:justify-center content-center w-screen lg:ml-64">
             <div className="mt-10 ml-5 mr-5 mb-0">
             <ToggleSidebar sidebarToggle={sidebarToggle}
             setSidebarToggle={setSidebarToggle}/>
