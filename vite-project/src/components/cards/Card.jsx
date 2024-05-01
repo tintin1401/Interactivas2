@@ -4,8 +4,8 @@ export function Card({title,description,img}){
         <div className='rounded-lg shadow-lg'>
             <img className='rounded-t-lg' src={`${img}`} alt="event" />
             <div className='p4'>
-                <h4 className='font-bold text-sm'>{title}</h4>
-                <p className='font-normal text-xs text-gray-800' >{description}</p>
+                <h4 className='font-bold text-sm ff-main'>{title}</h4>
+                <p className='font-normal text-xs text-gray-800 ff-secondary'>{description}</p>
             </div>
         </div>
     )

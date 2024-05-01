@@ -9,8 +9,8 @@ export function ContainerAboutUs({title,description,icon}){
             </div>
 
             <div className="flex justify-center flex-col">
-                <h3 className="text-white font-bold font-main text-base">{title}</h3>
-                <p className="text-white font-secondary text-xs lg:text-base">{description}</p>
+                <h3 className="text-white font-bold ff-main text-base">{title}</h3>
+                <p className="text-white ff-secondary text-xs lg:text-base">{description}</p>
             </div>
                                                              
         </div>

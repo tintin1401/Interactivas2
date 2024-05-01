@@ -2,7 +2,7 @@ import "../../../index.css";
 import logo from "../../../assets/imgs/logo-white.svg";
 const Sidebar = ({sidebarToggle}) =>{
     return(
-        <aside className={`w-64 bg-blue-900 text-white ${sidebarToggle? '' : 'hidden'} sd:block fixed inset-y-0 z-50`}>
+        <aside className={`w-64 bg-blue-900 text-white ${sidebarToggle? '' : 'hidden'} sd:block fixed inset-y-0 z-50 ff-main`}>
           <div className='flex items-center justify-center h-16 m-10'>
             <img className='max-w-40 h-auto' src={logo} alt="logo"/>
           </div>

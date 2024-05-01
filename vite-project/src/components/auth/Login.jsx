@@ -25,8 +25,8 @@ export function Login() {
             type="Password"
             img="../src/assets/imgs/password.svg"
           />
-          <input className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full my-8 cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500" type="submit" name="btn-login" value="Next"/>
-          <p className="text-white m-5 mr-4 ml-2">Don't have an account?<span className="text-orange-300 m-5 ml-1 cursor-pointer hover:text-orange-200">Create one</span></p>
+          <input className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full my-8 cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500 ff-main" type="submit" name="btn-login" value="Next"/>
+          <p className="text-white m-5 mr-4 ml-2 ff-main">Don't have an account?<span className="text-orange-300 m-5 ml-1 cursor-pointer hover:text-orange-200 ff-main">Create one</span></p>
 
 
 

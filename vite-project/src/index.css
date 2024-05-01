@@ -78,3 +78,11 @@ input::placeholder {
     flex: 0 0 50%; /* flex: 0 0 100% */
     min-width: 0;
 }
+
+.ff-main{
+    font-family: 'Rubik', sans-serif;
+}
+
+.ff-secondary{
+    font-family: 'Kameron', sans-serif;
+}

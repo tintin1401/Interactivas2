@@ -37,7 +37,7 @@ export function MultiStepper() {
         })}
       </Stepper>
       {activeStep === steps.length ? (
-       <h2>Thank you</h2>
+       <h2 className='ff-main'>Thank you</h2>
       ) : (
         <div className=" bg-blue-600 rounded-3xl grid justify-center items-center ">
           <div className="mx-10  lg:mx-16 w-[30vh] lg:w-[37vh]">
@@ -50,7 +50,7 @@ export function MultiStepper() {
             <div className="flex gap-4">
               {activeStep > 0 && (
                 <input
-                  className=" text-white p-2 bg-blue-400 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-blue-400 text-base"
+                  className=" text-white p-2 bg-blue-400 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-blue-400 text-base ff-main"
                   onClick={handleBack}
                   type="submit"
                   value="Back"
@@ -72,16 +72,16 @@ export function MultiStepper() {
                   // else alert("Please enter your name");}
                 }}
                 //onClick={handleNext}
-                className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500 text-lg"
+                className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500 text-lg ff-main"
                 type="submit"
                 name="btn-login"
                 value={activeStep === steps.length - 1 ? "Finish" : "Next"}
               />
             </div>
 
-            <p className="text-white m-5 text-base">
+            <p className="text-white m-5 text-base ff-main">
               Already create an account?
-              <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200">
+              <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200 ff-main">
                 Login
               </span>
             </p>
