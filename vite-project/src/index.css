@@ -20,7 +20,7 @@ input::placeholder {
 .css-1rv8zyt-MuiStack-root{
     display: grid !important;
     justify-content: center;
-    align-items: center;  
+    padding-bottom: 2rem; 
 }
 
 .css-11a8txn-MuiStack-root{

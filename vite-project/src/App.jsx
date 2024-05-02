@@ -20,12 +20,16 @@ function App(){
             setSidebarToggle={setSidebarToggle}/>
             <CtaContainer/>
             </div>
-            <div className="md:w-[min(72vw,_90vw)] ml-10 mr-10">
+            <div className="ml-10">
             <h1 className="ff-main text-2xl font-bold pb-[1rem] pl-[1rem] pr-[1rem] pt-[1.5rem] md:pb-[0.5rem] md:pt-[1rem] m-0 text-blue-600">Statistics</h1>
-            <Index/>
             </div>
+            <Index/>
             <h1 className="ff-main text-2xl font-bold pb-[1rem] pl-[1rem] pr-[1rem] pt-[1.5rem] ml-10 mr-0 mb-0 text-blue-600">Events</h1>
-            <div className="flex lg:flex-row flex-col gap-5 mb-10 ml-10 mr-10 w-[min(72vw,_90vw)]">
+            <div className="grid lg:grid-cols-2 gap-5 ml-5 mr-5">
+            <Schedule items={events}/>
+            <Schedule items={events}/>
+            <Schedule items={events}/>
+            <Schedule items={events}/>
             <Schedule items={events}/>
             <Schedule items={events}/>
             </div>

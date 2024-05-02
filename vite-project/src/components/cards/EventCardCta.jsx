@@ -1,5 +1,5 @@
 import { Schedule } from "./Schedule"
-
+import { Calendar } from "../calender/Calendar";
 import "../../index.css";
 
 export function EventCardCta() {
@@ -8,26 +8,30 @@ export function EventCardCta() {
     ]
 
     return (
-        <section class="grid justify-center items-center h-screen gap-4 bg-blue-100">
-            <section class="flex flex-col bg-white rounded-3xl">
-                <div class="flex justify-center  text-[2rem] text-blue-600 h-[7rem] items-center font-black ff-main">
-                    <h1>Schedule</h1>
-                </div>
-                <div class="flex col-start-1 col-end-3 ml-[2rem] lg:col-start-2 lg:col-end-4 gap-4 lg:ml-[5rem] font-bold ff-main">
-                    <h2 class="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Event</h2>
-                    <h2 class="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Task</h2>
-                    <h2 class="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Courses</h2>
-                </div>
-                <div className="scroll scrollbar-thumb-orange-700 scrollbar-track-white overflow-y-scroll mb-8 lg:scroll-smooth lg:scrollbar-thin p-4 lg:p-10 h-[75vh]">
-                    <section className="grid gap-4">
-                        <Schedule items={events}/>
-                        <Schedule items={events}/>
-                        <Schedule items={events}/>
-                        <Schedule items={events}/>
-                    </section>
-                </div>
-            </section>
+        <section class="grid lg:grid-cols-2 justify-center items-center h-screen lg:gap-4  gap-[15rem]">
+        <section class="flex flex-col bg-white rounded-3xl">
+            <div class="flex justify-center  text-[2rem] text-blue-600 h-[7rem] items-center font-black ff-main">
+                <h1 class="text-center">Schedule</h1>
+            </div>
+            <div class="flex col-start-1 col-end-3 ml-[2rem] lg:col-start-2 lg:col-end-4 gap-4 lg:ml-[5rem] font-bold ff-main">
+                <h2 class="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Event</h2>
+                <h2 class="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Task</h2>
+                <h2 class="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Courses</h2>
+            </div>
+            <div className="scroll scrollbar-thumb-orange-700 scrollbar-track-white overflow-y-scroll mb-8 lg:scroll-smooth lg:scrollbar-thin p-4 lg:p-10 h-[75vh]">
+                <section className="grid gap-4">
+                    <Schedule items={events} />
+                    <Schedule items={events} />
+                    <Schedule items={events} />
+                    <Schedule items={events} />
+                </section>
+            </div>
         </section>
+
+        <Calendar />
+
+
+    </section>
     );
 }
 
