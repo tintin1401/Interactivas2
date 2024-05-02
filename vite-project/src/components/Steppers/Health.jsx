@@ -1,7 +1,9 @@
 import "../../index.css";
 import { Selected } from "../selected/Selected.jsx";
+import { InputNext } from "../inputs/InputNext.jsx";
+import { InputBack } from "../inputs/InputBack.jsx";
 
-export function Health() {
+export function Health({addEvent}) {
   const hours = [
     { id: "choose", name: "Choose a option" },
     { id: "4hours", name: "Less than 4 hours" },
@@ -28,9 +30,13 @@ export function Health() {
     { id: "y", name: "Yes" },
     { id: "n", name: "No" },
   ];
+  const onCreateEvent = (event) => {
+    event.preventDefault(); 
+    addEvent() ; 
+ };
 
   return (
-    <>
+    <form id="health" onSubmit={onCreateEvent} >
       <Selected label="How many hours do you sleep?" options={hours} />
       <Selected label="Do you do physical activity?" options={physical} />
       <label className="block mb-2 text-base font-medium text-white">
@@ -44,8 +50,12 @@ export function Health() {
         />
       </div>
       <Selected label="Gender" options={gender} />
+      <div className="flex gap-4">
+        <InputNext value="Next" />
+        <InputBack value="Back" />
+      </div>
      
 
-    </>
+    </form>
   );
 }

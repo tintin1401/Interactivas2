@@ -44,8 +44,8 @@ export function MultiStepper() {
             <div className="grid justify-center my-8">
               <img className="w-52" src={logo} alt="" />
             </div>
-            {activeStep === 0 && <CreateAcount />}
-            {activeStep === 1 && <Health />}
+            {activeStep === 0 && <CreateAcount addEvent = {handleNext} />}
+            {activeStep === 1 && <Health addEvent = {handleNext} />}
             {activeStep === 2 && <Finish />}
             <div className="flex gap-4">
               {activeStep > 0 && (

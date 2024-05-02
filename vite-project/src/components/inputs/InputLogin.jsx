@@ -8,7 +8,7 @@ export function InputLogin({ placeholder, type, img }) {
         className="bg-blue-300 w-full border-none outline-none text-base"
         id={placeholder}
         name={placeholder}
-        required=""
+        required
         type={type}
         placeholder={placeholder}
         
