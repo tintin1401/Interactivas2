@@ -39,12 +39,12 @@ export function Health({addEvent}) {
     <form id="health" onSubmit={onCreateEvent} >
       <Selected label="How many hours do you sleep?" options={hours} />
       <Selected label="Do you do physical activity?" options={physical} />
-      <label className="block mb-2 text-base font-medium text-white">
+      <label className="block mb-2 text-base font-medium text-white ff-main">
         Do you have any disease?
       </label>
       <div className="flex bg-blue-300 p-3  rounded-xl">
         <input
-          className="bg-blue-300 w-full border-none outline-none"
+          className="bg-blue-300 w-full border-none outline-none ff-main"
           type="text"
           placeholder="Write if you have any disease"
         />
