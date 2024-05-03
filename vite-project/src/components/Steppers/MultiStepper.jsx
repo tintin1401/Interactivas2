@@ -22,7 +22,7 @@ export function MultiStepper() {
   return (
     <Box>
       <Stepper activeStep={activeStep}>
-        
+      
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -36,49 +36,14 @@ export function MultiStepper() {
           );
         })}
       </Stepper>
-      {activeStep === steps.length ? (
-       <h2 className='ff-main'>Thank you</h2>
-      ) : (
         <div className=" bg-blue-600 rounded-3xl grid justify-center items-center ">
           <div className="mx-10  lg:mx-16 w-[30vh] lg:w-[37vh]">
             <div className="grid justify-center my-8">
               <img className="w-52" src={logo} alt="" />
             </div>
             {activeStep === 0 && <CreateAcount addEvent = {handleNext} />}
-            {activeStep === 1 && <Health addEvent = {handleNext} />}
-            {activeStep === 2 && <Finish />}
-            <div className="flex gap-4">
-              {activeStep > 0 && (
-                <input
-                  className=" text-white p-2 bg-blue-400 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-blue-400 text-base ff-main"
-                  onClick={handleBack}
-                  type="submit"
-                  value="Back"
-                />
-              )}
-              <input
-                onClick={() => {
-                  if (activeStep === 0) {
-                    const isValid =
-                      document.querySelector("#Fullname").value.length > 0 &&
-                      document.querySelector("#Email").value.length > 0 &&
-                      document.querySelector("#Password").value.length > 0 &&
-                      document.querySelector("#Password").value.length > 0;
-                    console.log("Prueba" + isValid);
-                    if (isValid === true) handleNext();
-                  } else {
-                    handleNext();
-                  }
-                  // else alert("Please enter your name");}
-                }}
-                //onClick={handleNext}
-                className="text-white p-2 bg-orange-500 flex rounded-xl items-center justify-center w-full  cursor-pointer transition delay-150 duration-300 ease-in-out hover:bg-white hover:text-orange-500 text-lg ff-main"
-                type="submit"
-                name="btn-login"
-                value={activeStep === steps.length - 1 ? "Finish" : "Next"}
-              />
-            </div>
-
+            {activeStep === 1 && <Health addEvent = {handleNext} AddBack={handleBack} />}
+            {activeStep === 2 && <Finish AddBack={handleBack} />}
             <p className="text-white m-5 text-base ff-main">
               Already create an account?
               <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200 ff-main">
@@ -87,7 +52,6 @@ export function MultiStepper() {
             </p>
           </div>
         </div>
-      )}
     </Box>
   );
 }

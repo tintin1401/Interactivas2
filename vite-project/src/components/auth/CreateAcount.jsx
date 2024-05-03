@@ -10,7 +10,7 @@ export function CreateAcount({addEvent}) {
   return (
     <form id="account" onSubmit={onCreateEvent}>
       <InputLogin
-        placeholder="Fullname"
+        placeholder="Username"
         type="text"
         img="../src/assets/imgs/profile.svg"
       />

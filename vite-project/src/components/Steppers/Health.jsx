@@ -2,43 +2,14 @@ import "../../index.css";
 import { Selected } from "../selected/Selected.jsx";
 import { InputNext } from "../inputs/InputNext.jsx";
 import { InputBack } from "../inputs/InputBack.jsx";
+import { useHealth } from "../hooks/useHealth.js";
 
-export function Health({addEvent}) {
-  const hours = [
-    { id: "choose", name: "Choose a option" },
-    { id: "4hours", name: "Less than 4 hours" },
-    { id: "6hours", name: "4 to 6 hours" },
-    { id: "8hours", name: "6 to 8 hours" },
-    { id: "9hours", name: "More than 8 hours" },
-  ];
-
-  const gender = [
-    { id: "choose", name: "Choose a option" },
-    { id: "f", name: "Woman" },
-    { id: "m", name: "Men" },
-    { id: "n", name: "No specified" },
-  ];
-
-  const physical = [
-    { id: "choose", name: "Choose a option" },
-    { id: "y", name: "Yes" },
-    { id: "n", name: "No" },
-  ];
-
-  const disease = [
-    { id: "choose", name: "Choose a option" },
-    { id: "y", name: "Yes" },
-    { id: "n", name: "No" },
-  ];
-  const onCreateEvent = (event) => {
-    event.preventDefault(); 
-    addEvent() ; 
- };
-
+export function Health({addEvent, AddBack}) {
+  const { hours, physical, gender, onCreateEvent } = useHealth(addEvent);
   return (
-    <form id="health" onSubmit={onCreateEvent} >
-      <Selected label="How many hours do you sleep?" options={hours} />
-      <Selected label="Do you do physical activity?" options={physical} />
+    <div id="health"  >
+      <Selected label="How many hours do you sleep?" options={hours} id="hours" />
+      <Selected label="Do you do physical activity?" options={physical} id="physical" />
       <label className="block mb-2 text-base font-medium text-white ff-main">
         Do you have any disease?
       </label>
@@ -49,13 +20,11 @@ export function Health({addEvent}) {
           placeholder="Write if you have any disease"
         />
       </div>
-      <Selected label="Gender" options={gender} />
+      <Selected label="Gender" options={gender} id="gender" />
       <div className="flex gap-4">
-        <InputNext value="Next" />
-        <InputBack value="Back" />
+      <InputBack  type="submit"  value="Back" addBack={AddBack} />
+      <InputNext type="submit" addNext={onCreateEvent} value="Next" />
       </div>
-     
-
-    </form>
+    </div>
   );
 }
