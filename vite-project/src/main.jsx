@@ -10,6 +10,7 @@ import { Landing } from "./components/ui/landing/Principal.jsx";
 import App from "./App.jsx";
 import {Calendar} from "./components/calender/Calendar.jsx";
 import {EventCardCta} from "./components/cards/EventCardCta.jsx";
+import {UserProfile} from "./components/profile/UserProfile.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
