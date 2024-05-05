@@ -11,7 +11,7 @@ export const CircularProgressBar = ({ percentage }) => {
             root: {},
             
             path: {
-              stroke: `rgba(0, 47, 233, ${percentage / 100})`,
+              stroke: `rgba(0, 47, 233)`,
               strokeLinecap: 'butt', 
             },
             
