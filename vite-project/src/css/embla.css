@@ -1,9 +1,9 @@
 .embla {
-    max-width: 70rem; /* ajusta el largo del carousel. El default es 48rem. max-width: 70rem*/
+    max-width: 60rem; /* ajusta el largo del carousel. El default es 48rem. max-width: 70rem*/
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
-    --slide-size: 22%; /* define cuantas cartas salen en el carousel. El default es 70% */
+    --slide-size: 35%; /* define cuantas cartas salen en el carousel. El default es 70% */
 }
 
 .embla-card {
@@ -24,6 +24,24 @@
     .embla {
         max-width: 38rem;
         --slide-size: 70%; 
+    }
+    .embla-card {
+        width: 200px;
+        height: 200px;
+    }
+    .embla-bg-card {
+        width: 190px;
+        height: 190px;
+    }
+    .embla-height-cta {
+        height: 13rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .embla {
+        max-width: 45rem;
+        --slide-size: 35%; 
     }
     .embla-card {
         width: 200px;
