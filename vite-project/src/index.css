@@ -24,7 +24,9 @@ input::placeholder {
 }
 
 .css-11a8txn-MuiStack-root{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+   box-shadow: rgba(37,99,235,1.000) 0px 1px 4px, rgba(37,99,235,1.000) 0px 0px 0px 3px;
+   border-radius: 0.5rem;
+   
 }
 
 .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root{
