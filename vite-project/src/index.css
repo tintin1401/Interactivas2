@@ -12,6 +12,10 @@ input::placeholder {
     display: none;
 }
 
+.css-1rtg91x-MuiDateCalendar-root{
+    width: 100% !important;
+
+}
 
 .css-31ca4x-MuiPickersFadeTransitionGroup-root{
     color: #2841A5 !important;
@@ -19,14 +23,11 @@ input::placeholder {
 
 .css-1rv8zyt-MuiStack-root{
     display: grid !important;
-    justify-content: center;
-    padding-bottom: 2rem; 
-}
+    justify-content: center;}
 
-.css-11a8txn-MuiStack-root{
-   box-shadow: rgba(37,99,235,1.000) 0px 1px 4px, rgba(37,99,235,1.000) 0px 0px 0px 3px;
-   border-radius: 0.5rem;
-   
+.css-e784if-MuiTypography-root{
+    border-bottom-width: medium;
+    border-color: rgb(37 99 235); 
 }
 
 .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root{

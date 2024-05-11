@@ -1,11 +1,15 @@
 import "../../index.css";
 
-export function EventCard({ image, title, date, event, hour, description }) {
+export function EventCard({ image, title, date, event, hour, description,calender=false}) {
     return (
-        <div className="flex flex-col md:flex-row lg:flex-row bg-blue-600 rounded-3xl p-4 ">
 
-            <img className="rounded-3xl w-fit md:w-[20vw] lg:w-[13vw]" src={`${image}`} alt="event"/>
-                <div className="grid gap-4 w-full">
+        <>
+        
+    
+        <div className={`flex flex-col  lg:flex-row bg-blue-600 rounded-3xl p-4 gap-2 ${calender ? 'md:flex-col' : 'md:flex-row'}`}>
+
+            <img className={`rounded-3xl object-cover w-fit ${calender ? 'md:w-fit' : 'md:w-[22vw]'} lg:w-[13vw]`} src={`${image}`} alt="event"/>
+                <div className="grid gap-3 w-full">
 
                     <div className="flex justify-between ff-main">
                         <h3 className="text-white text-xl font-bold">{title}</h3>
@@ -23,5 +27,6 @@ export function EventCard({ image, title, date, event, hour, description }) {
 
                 </div>
         </div>
+        </>
     )
 }

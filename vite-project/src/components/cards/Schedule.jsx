@@ -12,7 +12,8 @@ export function Schedule({items}) {
             date={item.date}
             event={item.event}
             hour={item.hour}
-            description={item.description}/>)}
+            description={item.description}
+            calender={item.calender}/>)}
         </>
     );
 }
