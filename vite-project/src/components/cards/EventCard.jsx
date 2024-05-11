@@ -2,9 +2,9 @@ import "../../index.css";
 
 export function EventCard({ image, title, date, event, hour, description }) {
     return (
-        <div className="flex flex-col md:flex-row lg:flex-row bg-blue-600 rounded-3xl p-4 gap-4">
+        <div className="flex flex-col md:flex-row lg:flex-row bg-blue-600 rounded-3xl p-4 ">
 
-            <img className="rounded-3xl w-fit md:w-[22vw] lg:w-[13vw]" src={`${image}`} alt="event"/>
+            <img className="rounded-3xl w-fit md:w-[20vw] lg:w-[13vw]" src={`${image}`} alt="event"/>
                 <div className="grid gap-4 w-full">
 
                     <div className="flex justify-between ff-main">

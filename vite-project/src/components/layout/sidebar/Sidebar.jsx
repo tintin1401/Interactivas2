@@ -49,7 +49,7 @@ const Sidebar = ({sidebarToggle}) =>{
                 <input className="border-none outline-none p-[.5rem] w-full" type="text" placeholder="Search"/>
             </form>
 
-            <nav className="m-10">
+            <nav className="mx-10 mb-10 mt-20  border-t-2 border-t-stone-50">
                 <a href="#" className="flex py-5 px-4 text-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 mr-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
                 </svg>
