@@ -31,12 +31,7 @@ function App(){
             </div>
             <Index/>
             <h2 className="ff-main text-2xl font-bold pb-[1rem] px-[1rem] pt-[1.5rem] ml-10  text-blue-600">Events</h2>
-            <div className="grid lg:grid-cols-[auto_auto] gap-5 mx-5">
-            <Schedule items={events}/>
-            <Schedule items={events}/>
-            <Schedule items={events}/>
-            <Schedule items={events}/>
-            <Schedule items={events}/>
+            <div className="grid lg:grid-cols-[auto_auto] gap-5 md:mx-5">
             <Schedule items={events}/>
             </div>
         </main>

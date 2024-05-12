@@ -6,9 +6,9 @@ export function EventCard({ image, title, date, event, hour, description,calende
         <>
         
     
-        <div className={`flex flex-col  lg:flex-row bg-blue-600 rounded-3xl p-4 gap-2 ${calender ? 'md:flex-col' : 'md:flex-row'}`}>
+        <div className={`flex flex-col  xl:flex-row bg-blue-600 rounded-3xl p-4 gap-2 ${calender ? 'lg:flex-col' : 'md:flex-row'}`}>
 
-            <img className={`rounded-3xl object-cover w-fit ${calender ? 'md:w-fit' : 'md:w-[22vw]'} lg:w-[13vw]`} src={`${image}`} alt="event"/>
+            <img className={`rounded-3xl object-cover w-fit ${calender ? 'lg:w-fit' : 'md:w-[22vw]'} xl:w-[13vw]`} src={`${image}`} alt="event"/>
                 <div className="grid gap-3 w-full">
 
                     <div className="flex justify-between ff-main">
