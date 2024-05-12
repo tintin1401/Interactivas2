@@ -15,5 +15,5 @@ import {UserProfile} from "./components/profile/UserProfile.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-<EventCardCta/>
+<App/>
 );

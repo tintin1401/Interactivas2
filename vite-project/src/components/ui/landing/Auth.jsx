@@ -2,17 +2,38 @@ import '../../../index.css'
 import { Login } from "../../auth/Login.jsx";
 import { CreateAcount } from "../../auth/CreateAcount.jsx";
 import { MultiStepper } from '../../Steppers/MultiStepper.jsx';
+import React, { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 
 //<Login /> 
 export function Auth() {
+
+  const [isAuthVisible, setIsAuthVisible] = useState(false);
+
+  useEffect(() => {
+    const authTimer = setTimeout(() => {
+      setIsAuthVisible(true);
+    }, 500);
+
+    return () => {
+      clearTimeout(authTimer);
+    };
+  }, []);
+
   return (
     <div
       className="bg-no-repeat bg-cover flex justify-center items-center h-[100vh]"
       style={{ backgroundImage: "url(../src/assets/imgs/bg-register.png" }}
     >
       <div className="grid justify-center">
-        <MultiStepper
-        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isAuthVisible ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <MultiStepper
+          />
+        </motion.div>
       </div>
     </div>
   );
