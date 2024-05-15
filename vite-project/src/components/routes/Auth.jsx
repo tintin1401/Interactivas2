@@ -1,7 +1,7 @@
-import '../../../index.css'
-import { Login } from "../../auth/Login.jsx";
-import { CreateAcount } from "../../auth/CreateAcount.jsx";
-import { MultiStepper } from '../../Steppers/MultiStepper.jsx';
+import '../../index.css'
+import { Login } from '../auth/Login.jsx'; 
+import { CreateAcount } from "../auth/CreateAcount.jsx";
+import { MultiStepper } from '../Steppers/MultiStepper.jsx';
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 

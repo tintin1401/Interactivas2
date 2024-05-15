@@ -1,4 +1,4 @@
-import { Schedule } from "./Schedule"
+import { Schedule } from "../cards/Schedule.jsx"; 
 import { Calendar } from "../calender/Calendar";
 import { SelectedCourse } from "../calender/calendarFilters/SelectedCourse";
 import { TagCategories } from "../calender/calendarFilters/TagCategories";

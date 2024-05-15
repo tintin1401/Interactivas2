@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { StepsContainer } from '../../containers/StepsContainer.jsx'
-import { ContainerAboutUs } from '../../containers/ContainerAboutUs.jsx'
-import { Footer } from '../../footer/Footer.jsx'
-import logo from "../../../assets/imgs/logo-white.svg";
-import AreaC from "../../../assets/imgs/Area-Contaduria-Privada11.jpg";
+import { StepsContainer } from '../containers/StepsContainer.jsx'
+import { ContainerAboutUs } from '../containers/ContainerAboutUs.jsx'
+import { Footer } from '../footer/Footer.jsx'
+import logo from '../../assets/imgs/logo-white.svg'
+import AreaC from "../../assets/imgs/Area-Contaduria-Privada11.jpg";
 import { useInView, motion, useScroll } from "framer-motion";
 import { useRef } from "react";
+import { NavLink } from 'react-router-dom'
 
 export function Landing() {
 
@@ -54,7 +55,7 @@ export function Landing() {
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                             >
-                                <a href="#">Login</a>
+                                <NavLink to="/auth">Login</NavLink>
                             </motion.div>
                             <motion.div
                                 className="inline-block bg-orange-500 text-white p-[0.40rem_1rem] rounded-md font-bold text-base w-1/2"
@@ -62,7 +63,7 @@ export function Landing() {
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                             >
-                                <a href="#">Get Started</a>
+                                <NavLink to="/auth">Get Started</NavLink>
                             </motion.div>
                         </div>
                     </section>
