@@ -33,7 +33,7 @@ export function UserProfile() {
                 </motion.div>
                 <ToggleSidebar sidebarToggle={sidebarToggle}
                     setSidebarToggle={setSidebarToggle} />
-                <div className="flex justify-center items-center min-h-screen bg-blue-50 lg:ml-64">
+                <div className="flex justify-center items-center min-h-screen bg-[#EFF6FE] lg:ml-64">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: isProfileVisible ? 1 : 0 }}
