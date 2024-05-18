@@ -3,11 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { CardContainer } from './CardContainer.jsx';
 import { PorcentageCard } from './PorcentageCard.jsx';
-import {
-    NextButton,
-    PrevButton,
-    usePrevNextButtons
-} from './EmblaCarouselArrowButtons'
+
 
 const EmblaCarousel = (props) => {
 
@@ -25,13 +21,6 @@ const EmblaCarousel = (props) => {
         Autoplay({ playOnInit: true, delay: 7000 })
     ])
     const [isPlaying, setIsPlaying] = useState(false)
-
-    const {
-        prevBtnDisabled,
-        nextBtnDisabled,
-        onPrevButtonClick,
-        onNextButtonClick
-    } = usePrevNextButtons(emblaApi)
 
     const onButtonAutoplayClick = useCallback(
         (callback) => {
