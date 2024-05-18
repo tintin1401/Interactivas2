@@ -17,7 +17,7 @@ export function ChangePassword() {
     }, []);
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-blue-50">
+        <div className="flex justify-center items-center min-h-screen bg-[#EFF6FE]">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isCtaPasswordVisible ? 1 : 0 }}
