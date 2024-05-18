@@ -37,7 +37,7 @@ export function MultiStepper() {
         })}
       </Stepper>
         <div className=" bg-blue-600 rounded-3xl grid justify-center items-center ">
-          <div className="mx-10  lg:mx-16 w-[30vh] lg:w-[37vh]">
+          <div className="mx-10  lg:mx-16 lg:w-[37vh]">
             <div className="grid justify-center my-8">
               <img className="w-52" src={logo} alt="" />
             </div>
