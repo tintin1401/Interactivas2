@@ -11,7 +11,7 @@ export function HeaderLanding() {
         const isInView = useInView(ref, { once: true });
 
         return (
-            <h1
+            <div
                 ref={ref}
                 style={{
                     transform: isInView ? "none" : "translateX(-200px)",
@@ -20,7 +20,7 @@ export function HeaderLanding() {
                 }}
             >
                 {children}
-            </h1>
+            </div>
         );
     }
 
