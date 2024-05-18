@@ -1,14 +1,24 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import { CardContainer } from './CardContainer.jsx';
+import { PorcentageCard } from './PorcentageCard.jsx';
 import {
     NextButton,
     PrevButton,
     usePrevNextButtons
 } from './EmblaCarouselArrowButtons'
-import { CircularProgressBar } from '../progressBar/CircularProgressbar'
 
 const EmblaCarousel = (props) => {
+
+    const cards = [
+        { "id": 1, "number": "4", "tasks": "Tareas", },
+        { "id": 2, "number": "5", "tasks": "Tareas", },
+        { "id": 3, "number": "6", "tasks": "Tareas", },
+        { "id": 4, "number": "7", "tasks": "Tareas", },
+        { "id": 5, "number": "8", "tasks": "Tareas", },
+    ]
+    
     const { slides, options } = props
 
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [
@@ -61,94 +71,10 @@ const EmblaCarousel = (props) => {
         <div className="embla">
             <div className="embla mx-auto mt-12 embla-height-cta lg:max-w-[55rem] sm:max-w-[25rem]" ref={emblaRef}>
                 <div className="embla__container h-full">
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-600">
-                                <div className="w-[5rem] h-[5rem] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    <p className="text-white text-[3rem] m-0 flex justify-center items-center ff-main">1</p>
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20 bg-blue-600 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%] bg-blue-950 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-600">
-                                <div className="w-[5rem] h-[5m] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    <p className="text-white text-[3rem] m-0 flex justify-center items-center ff-main">2</p>
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20 bg-blue-600 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%] bg-blue-950 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-600">
-                                <div className="w-[5rem] h-[5rem] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    <p className="text-white text-[3rem] m-0 flex justify-center items-center ff-main">3</p>
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20 bg-blue-600 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%] bg-blue-950 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-600">
-                                <div className="w-[5rem] h-[5rem] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    <p className="text-white text-[3rem] m-0 flex justify-center items-center ff-main">4</p>
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20 bg-blue-600 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%] bg-blue-950 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-600">
-                                <div className="w-[5rem] h-[5rem] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    <p className="text-white text-[3rem] m-0 flex justify-center items-center ff-main">5</p>
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20 bg-blue-600 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%] bg-blue-950 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-600">
-                                <div className="w-[5rem] h-[5rem] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    <p className="text-white text-[3rem] m-0 flex justify-center items-center ff-main">6</p>
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20 bg-blue-600 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%] bg-blue-950 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="embla__slide flex items-center justify-center">
-                        <div className="col-start-2 col-end-3 row-start-2 row-end-3 justify-self-end">
-                            <div className="relative embla-card rounded-[14px] z-50 overflow-hidden flex flex-col items-center justify-center bg-blue-950">
-                                <div className="w-[5rem] h-[5rem] rounded-full bg-blue-950 z-40 justify-center items-center flex">
-                                    < CircularProgressBar percentage={70} />
-                                </div>
-                                <p className="text-white text-[1.5rem] m-0 z-50 mt-2 ff-main">Tareas</p>
-                                <div className="absolute top-[5px] left-[5px] embla-bg-card z-20  bg-blue-950 backdrop-blur-xl rounded-[10px] overflow-hidden"></div>
-                                <div className="absolute z-10 top-2/4 left-2/4 w-[150px] h-[150px] rounded-[50%]  bg-blue-600 opacity-100 animate-blob-bounce"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <CardContainer items={cards} />
+                    <PorcentageCard />
                 </div>
             </div>
-
-
         </div>
     )
 }
