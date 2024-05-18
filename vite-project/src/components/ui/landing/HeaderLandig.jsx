@@ -3,8 +3,9 @@ import logo from '../../../assets/imgs/logo-white.svg'
 import { useInView, motion} from "framer-motion";
 import { useRef } from "react";
 import { NavLink } from 'react-router-dom'
+import { useComponentContext } from '../../../components/hooks/useComponentContext.jsx';
 export function HeaderLanding() {
-    
+    const { setCurrentComponent } = useComponentContext();
 
     function AnimatedTitle({ children }) {
         const ref = useRef(null);
@@ -46,6 +47,7 @@ export function HeaderLanding() {
                                 whileHover={{ scale: 1.2 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                onClick={() => setCurrentComponent('Login')}
                             >
                                 <NavLink to="/auth">Login</NavLink>
                             </motion.div>
@@ -54,6 +56,7 @@ export function HeaderLanding() {
                                 whileHover={{ scale: 1.2 }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                onClick={() => setCurrentComponent('MultiStepper')}
                             >
                                 <NavLink to="/auth">Get Started</NavLink>
                             </motion.div>

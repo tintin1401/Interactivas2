@@ -8,14 +8,17 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import logo from "../../assets/imgs/logo-white.svg";
-
 import { CreateAcount } from "../auth/CreateAcount.jsx";
 import { Health } from "../Steppers/Health.jsx";
 import { Finish } from "../Steppers/Finish.jsx";
+import { NavLink } from "react-router-dom";
+import { useComponentContext } from "../hooks/useComponentContext.jsx";
+
 const steps = ["Create an account", "Health","Finish"];
 
 
 export function MultiStepper() {
+  const { setCurrentComponent } = useComponentContext();
   const { activeStep, handleNext, handleBack } = useStepper();
   
 
@@ -46,9 +49,13 @@ export function MultiStepper() {
             {activeStep === 2 && <Finish AddBack={handleBack} />}
             <p className="text-white m-5 text-base ff-main">
               Already create an account?
-              <span className="text-orange-300  ml-[1px] cursor-pointer hover:text-orange-200 ff-main">
+              <NavLink
+                to="/auth"
+                className="text-orange-300 m-5 ml-1 cursor-pointer hover:text-orange-200 ff-main"
+                onClick={() => setCurrentComponent('Login')}
+              >
                 Login
-              </span>
+              </NavLink>
             </p>
           </div>
         </div>

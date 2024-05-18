@@ -4,10 +4,12 @@ import { CreateAcount } from "../auth/CreateAcount.jsx";
 import { MultiStepper } from '../Steppers/MultiStepper.jsx';
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
+import { useComponentContext } from '../../components/hooks/useComponentContext.jsx';
 
 //<Login /> 
 export function Auth() {
 
+  const { currentComponent } = useComponentContext();
   const [isAuthVisible, setIsAuthVisible] = useState(false);
 
   useEffect(() => {
@@ -31,8 +33,11 @@ export function Auth() {
           animate={{ opacity: isAuthVisible ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >
-          <MultiStepper
-          />
+          {currentComponent === 'MultiStepper' ? (
+            <MultiStepper />
+          ) : (
+            <Login />
+          )}
         </motion.div>
       </div>
     </div>

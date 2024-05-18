@@ -9,7 +9,7 @@ import { Auth } from './components/routes/Auth.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <>
     <BrowserRouter>
-    <Auth/>
+    <App/>
     </BrowserRouter>
     </>
 );
