@@ -49,22 +49,22 @@ export function UserProfile() {
                                     </div>
                                     <div className="flex flex-col gap-6 mb-1 md:flex-row">
                                         <div className="">
-                                            <label for="fullName" className="block mb-1 text-sm font-medium text-gray-900">Full name</label>
+                                            <label htmlFor="fullName" className="block mb-1 text-sm font-medium text-gray-900">Full name</label>
                                             <input type="fullName" id="fullName" className="border-2 border-blue-700 rounded-md md:w-[20rem] w-full p-2" placeholder="Full name" />
                                         </div>
 
                                         <div className="mb-4">
-                                            <label for="carnet" className="block mb-1 text-sm font-medium text-gray-900">Carnet</label>
+                                            <label htmlFor="carnet" className="block mb-1 text-sm font-medium text-gray-900">Carnet</label>
                                             <input type="carnet" id="carnet" className="border-2 border-blue-700 rounded-md md:w-[20rem] w-full p-2" placeholder="Carnet" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col gap-6 mb-2 md:flex-row">
                                         <div className="">
-                                            <label for="email" className="block mb-1 text-sm font-medium text-gray-900">Email</label>
+                                            <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-900">Email</label>
                                             <input type="email" id="email" className="border-2 border-blue-700 rounded-md md:w-[20rem] w-full p-2" placeholder="@gmail.com" />
                                         </div>
                                         <div className="mb-6">
-                                            <label for="password" className="block mb-1 text-sm font-medium text-gray-900">Password</label>
+                                            <label htmlFor="password" className="block mb-1 text-sm font-medium text-gray-900">Password</label>
                                             <input type="password" id="password" className="border-2 border-blue-700 rounded-md md:w-[20rem] w-full p-2" placeholder="•••••••••" required />
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@ export function UserProfile() {
                                     <div className="flex flex-col gap-6 mb-1 md:flex-row">
 
                                         <div className="">
-                                            <label for="hoursOfSleep" className="block mb-1 text-sm font-medium text-gray-900">Hours of sleep</label>
+                                            <label htmlFor="hoursOfSleep" className="block mb-1 text-sm font-medium text-gray-900">Hours of sleep</label>
                                             <select id="hoursOfSleep" className="border-2 border-blue-700 rounded-md w-[20rem] p-2" required>
                                                 <option value="yes">Less than 4 hours</option>
                                                 <option value="no">4 to 6 hours</option>
@@ -82,7 +82,7 @@ export function UserProfile() {
                                             </select>
                                         </div>
                                         <div className="mb-4">
-                                            <label for="hoursOfSleep" className="block mb-1 text-sm font-medium text-gray-900">Physical activity</label>
+                                            <label htmlFor="hoursOfSleep" className="block mb-1 text-sm font-medium text-gray-900">Physical activity</label>
                                             <select id="hoursOfSleep" className="border-2 border-blue-700 rounded-md w-[20rem] p-2" required>
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
@@ -91,14 +91,14 @@ export function UserProfile() {
                                     </div>
                                     <div className="flex flex-col gap-6 mb-6 md:flex-row">
                                         <div className="">
-                                            <label for="diseases" className="block mb-1 text-sm font-medium text-gray-900">Diseases</label>
+                                            <label htmlFor="diseases" className="block mb-1 text-sm font-medium text-gray-900">Diseases</label>
                                             <select id="diseases" className="border-2 border-blue-700 rounded-md w-[20rem] p-2" required>
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
                                         </div>
                                         <div className="mb-4">
-                                            <label for="diseases" className="block mb-1 text-sm font-medium text-gray-900">Gender</label>
+                                            <label htmlFor="diseases" className="block mb-1 text-sm font-medium text-gray-900">Gender</label>
                                             <select id="diseases" className="border-2 border-blue-700 rounded-md md:w-[20rem] w-full p-2" required>
                                                 <option value="yes">Woman</option>
                                                 <option value="no">Men</option>
