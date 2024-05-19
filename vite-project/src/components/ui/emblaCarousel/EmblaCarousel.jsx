@@ -18,43 +18,8 @@ const EmblaCarousel = (props) => {
     const { slides, options } = props
 
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-        Autoplay({ playOnInit: true, delay: 7000 })
+        Autoplay({ playOnInit: true, delay: 7000, stopOnInteraction: false })
     ])
-    const [isPlaying, setIsPlaying] = useState(false)
-
-    const onButtonAutoplayClick = useCallback(
-        (callback) => {
-            const autoplay = emblaApi?.plugins()?.autoplay
-            if (!autoplay) return
-
-            const resetOrStop =
-                autoplay.options.stopOnInteraction === false
-                    ? autoplay.reset
-                    : autoplay.stop
-
-            resetOrStop()
-            callback()
-        },
-        [emblaApi]
-    )
-
-    const toggleAutoplay = useCallback(() => {
-        const autoplay = emblaApi?.plugins()?.autoplay
-        if (!autoplay) return
-
-        autoplay.play();
-    }, [emblaApi]);
-
-    useEffect(() => {
-        const autoplay = emblaApi?.plugins()?.autoplay
-        if (!autoplay) return
-
-        setIsPlaying(autoplay.isPlaying())
-        emblaApi
-            .on('autoplay:play', () => setIsPlaying(true))
-            .on('autoplay:stop', () => setIsPlaying(false))
-            .on('reInit', () => setIsPlaying(autoplay.isPlaying()))
-    }, [emblaApi])
 
     return (
         <div className="embla">
