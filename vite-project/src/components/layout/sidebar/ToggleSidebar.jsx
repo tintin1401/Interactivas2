@@ -1,4 +1,12 @@
 import "../../../index.css";
+/**
+ * Renders a button that toggles the visibility of the sidebar when clicked.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {boolean} props.sidebarToggle - The current toggle state of the sidebar.
+ * @param {function} props.setSidebarToggle - The function to update the toggle state of the sidebar.
+ * @return {JSX.Element} - The rendered button component.
+ */
 const ToggleSidebar = ({sidebarToggle, setSidebarToggle}) =>{
     return(
         <button className="lg:hidden fixed top-9 right-10 z-50" onClick={() => setSidebarToggle(!sidebarToggle)}>

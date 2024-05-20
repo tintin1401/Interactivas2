@@ -1,5 +1,10 @@
 import "../../../index.css";
 
+/**
+ * Renders a grid of tag categories as clickable links.
+ *
+ * @return {JSX.Element} A div containing a grid of tag categories as links.
+ */
 export function TagCategories() {
 
     return (

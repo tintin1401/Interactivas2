@@ -17,6 +17,11 @@ import { useComponentContext } from "../hooks/useComponentContext.jsx";
 const steps = ["Create an account", "Health","Finish"];
 
 
+/**
+ * Renders a multi-step form component with a stepper and different steps based on the active step.
+ *
+ * @return {JSX.Element} The rendered MultiStepper component.
+ */
 export function MultiStepper() {
   const { setCurrentComponent } = useComponentContext();
   const { activeStep, handleNext, handleBack } = useStepper();

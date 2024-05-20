@@ -1,5 +1,14 @@
 import "../../index.css";
 import { useInView, motion, useScroll } from "framer-motion";
+/**
+ * Renders a container component for a step in a process with a step number, title, and description.
+ *
+ * @param {Object} props - The properties for the steps container component.
+ * @param {number} props.stepNumber - The number of the step.
+ * @param {string} props.title - The title of the step.
+ * @param {string} props.description - The description of the step.
+ * @return {JSX.Element} The rendered steps container component.
+ */
 export function StepsContainer({ stepNumber, title, description }) {
     return (
         <div className="bg-blue-950 p-[1.5rem] rounded-[0.625rem]">

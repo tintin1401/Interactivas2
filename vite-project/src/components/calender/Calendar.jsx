@@ -30,6 +30,12 @@ function fakeFetch(date, { signal }) {
       resolve({ daysToHighlight });
     }, 200);
 
+    /**
+     * Handles the abort event of the signal.
+     *
+     * @param {function} onabort - The abort event handler.
+     * @return {void} This function does not return anything.
+     */
     signal.onabort = () => {
       clearTimeout(timeout);
       reject(new DOMException('aborted', 'AbortError'));
@@ -39,6 +45,18 @@ function fakeFetch(date, { signal }) {
 
 const initialValue = dayjs('2024-04-21');
 
+
+
+/**
+ * Renders a server-side day component with optional highlighting and badge.
+ *
+ * @param {Object} props - The props object containing the following properties:
+ *   - highlightedDays: An array of numbers representing the days to highlight.
+ *   - day: A dayjs object representing the day.
+ *   - outsideCurrentMonth: A boolean indicating if the day is outside the current month.
+ *   - ...other: Additional props to pass to the component.
+ * @return {JSX.Element} The rendered server-side day component.
+ */
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
 
@@ -57,12 +75,25 @@ function ServerDay(props) {
 
 }
 
+
+/**
+ * Renders a calendar component that fetches highlighted days from a server and displays them in a calendar.
+ *
+ * @return {JSX.Element} The rendered calendar component.
+ */
 export  function Calendar() {
   const requestAbortController = React.useRef(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
   
 
+  
+/**
+ * Fetches highlighted days from a server and updates the state with the fetched data.
+ *
+ * @param {Date} date - The date for which to fetch highlighted days.
+ * @return {void} This function does not return anything.
+ */
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
     fakeFetch(date, {
@@ -90,6 +121,12 @@ export  function Calendar() {
     return () => requestAbortController.current?.abort();
   }, []);
 
+  /**
+   * Handles the change of the month.
+   *
+   * @param {Date} date - The date for which to fetch highlighted days.
+   * @return {void} This function does not return anything.
+   */
   const handleMonthChange = (date) => {
     if (requestAbortController.current) {
       // make sure that you are aborting useless requests

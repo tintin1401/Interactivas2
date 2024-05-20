@@ -8,6 +8,11 @@ import React, { useState, useEffect } from 'react';
 import "../../index.css";
 import { motion } from "framer-motion";
 
+/**
+ * Renders the EventCardCta component, which displays a sidebar with a schedule and calendar.
+ *
+ * @return {JSX.Element} The rendered component.
+ */
 export function EventCardCta() {
     const [sidebarToggle, setSidebarToggle] = useState(false);
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -60,7 +65,7 @@ export function EventCardCta() {
                             transition={{ duration: 0.5, delay: 1 }}
                         >
                             <section className="grid gap-2 grid-rows-[auto] bg-white rounded-3xl px-6 pt-6 ">
-                                <h1 className="text-left text-[2rem] font-bold text-blue-600 ">Today’s Schedule</h1>
+                                <h2 className="text-left text-[2rem] font-bold text-blue-600 ">Today’s Schedule</h2>
                                 <div className="flex gap-4 font-bold ff-main">
                                     <h2 className="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Pending</h2>
                                     <h2 className="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Completed</h2>

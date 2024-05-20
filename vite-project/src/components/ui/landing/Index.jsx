@@ -7,6 +7,11 @@ import '../../../css/embla.css'
 import '../../../index.css'
 
 
+/**
+ * Renders the Index component which displays an EmblaCarousel with 3 slides.
+ *
+ * @return {JSX.Element} The rendered Index component.
+ */
 export function Index() {
   const OPTIONS = { loop: true };
   const SLIDE_COUNT = 3;

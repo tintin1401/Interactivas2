@@ -5,6 +5,14 @@ import { CardContainer } from './CardContainer.jsx';
 import { PorcentageCard } from './PorcentageCard.jsx';
 
 
+/**
+ * Renders an EmblaCarousel component with the given props.
+ *
+ * @param {Object} props - The props object containing the following properties:
+ *   - slides: An array of slide objects.
+ *   - options: An object containing options for the EmblaCarousel.
+ * @return {JSX.Element} The rendered EmblaCarousel component.
+ */
 const EmblaCarousel = (props) => {
 
     const cards = [

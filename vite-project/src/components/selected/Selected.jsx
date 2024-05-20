@@ -1,5 +1,14 @@
 import "../../index.css";
 
+/**
+ * Renders a select component with a label and options for selection.
+ *
+ * @param {Object} props - The properties for the selected component.
+ * @param {string} props.label - The label for the select component.
+ * @param {Array} props.options - The options for the select component.
+ * @param {string} props.id - The id for the select component.
+ * @return {JSX.Element} The rendered select component.
+ */
 export function Selected({label,options,id}) {
   return (
     <>

@@ -1,3 +1,10 @@
+/**
+ * Returns an object containing arrays of options for hours, gender, physical activity, and disease,
+ * as well as a function to handle the creation of an event.
+ *
+ * @param {function} addEvent - A function to be called when the event is created.
+ * @return {Object} An object containing arrays of options and a function to handle event creation.
+ */
 export const useHealth = (addEvent) => {
     const hours = [
         { id: "choose", name: "Choose a option" },

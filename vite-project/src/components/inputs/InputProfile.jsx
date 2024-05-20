@@ -1,5 +1,15 @@
 import "../../index.css";
 
+/**
+ * Renders an input profile component with a label and an input field.
+ *
+ * @param {Object} props - The properties for the input profile component.
+ * @param {string} props.placeholder - The placeholder text for the input field.
+ * @param {string} props.type - The type of the input field.
+ * @param {string} props.id - The id of the input field.
+ * @param {string} props.label - The label for the input field.
+ * @return {JSX.Element} The rendered input profile component.
+ */
 export function InputProfile({ placeholder, type, id,label }) {
   return (
     <div className="mb-3">

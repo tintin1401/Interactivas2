@@ -4,6 +4,11 @@ import { InputLogin } from "../inputs/InputLogin.jsx";
 import { NavLink } from "react-router-dom";
 import { useComponentContext } from "../hooks/useComponentContext.jsx";
 
+/**
+ * Login is a React functional component that renders a form for logging in.
+ *
+ * @return {JSX.Element} The rendered form.
+ */
 export function Login() {
   const { setCurrentComponent } = useComponentContext();
   return (

@@ -10,6 +10,11 @@ import { InputProfile } from '../inputs/InputProfile.jsx';
   
 
 
+/**
+ * Renders the User Profile component.
+ *
+ * @return {JSX.Element} The rendered User Profile component.
+ */
 export function UserProfile() {
    const { modal, openModal, sidebarToggle, isSidebarVisible, isProfileVisible,setIsProfileVisible,setIsSidebarVisible, setSidebarToggle } = useProfile();
     const body = (

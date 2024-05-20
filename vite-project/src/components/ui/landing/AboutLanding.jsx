@@ -3,6 +3,11 @@ import { ContainerAboutUs } from '../../containers/ContainerAboutUs.jsx'
 import AreaC from "../../../assets/imgs/Area-Contaduria-Privada11.jpg";
 
 
+/**
+ * Renders the About Landing section of the page.
+ *
+ * @return {JSX.Element} The About Landing section.
+ */
 export function AboutLanding(){ 
     return( 
         <div>

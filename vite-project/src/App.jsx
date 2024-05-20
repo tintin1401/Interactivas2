@@ -7,6 +7,11 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { UserProfile } from './components/routes/UserProfile.jsx';
 import { ComponentProvider } from './components/hooks/useComponentContext.jsx';
 
+/**
+ * Renders the main application component.
+ *
+ * @return {JSX.Element} The rendered application component.
+ */
 export function App() {
     return (
       <ComponentProvider>

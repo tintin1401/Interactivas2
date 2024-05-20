@@ -1,6 +1,11 @@
 import "../../../index.css";
 import React, { useState } from 'react';
 
+/**
+ * Renders a select component for selecting a course.
+ *
+ * @return {JSX.Element} The rendered select component.
+ */
 export function SelectedCourse() {
     const [selectedItem, setSelectedItem] = useState('');
   

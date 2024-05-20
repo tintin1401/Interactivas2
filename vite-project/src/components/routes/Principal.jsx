@@ -5,6 +5,11 @@ import { HeaderLanding } from '../ui/landing/HeaderLandig.jsx'
 import { CardLanding } from '../ui/landing/CardLanding.jsx'
 import { AboutLanding } from '../ui/landing/AboutLanding.jsx'
 
+/**
+ * Renders the landing page component.
+ *
+ * @return {JSX.Element} The rendered landing page component.
+ */
 export function Landing() {
     const { scrollYProgress } = useScroll();
     return (

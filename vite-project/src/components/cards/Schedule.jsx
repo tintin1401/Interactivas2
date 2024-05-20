@@ -1,6 +1,13 @@
 import "../../index.css";
 import { EventCard } from "./EventCard";
 
+/**
+ * Renders a schedule component that displays a list of events.
+ *
+ * @param {Object} props - The properties object.
+ * @param {Array} props.items - An array of event objects to be displayed.
+ * @return {JSX.Element} The rendered schedule component.
+ */
 export function Schedule({items}) {
 
     return(

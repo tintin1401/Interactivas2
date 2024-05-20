@@ -1,5 +1,18 @@
 import { useState , useEffect }  from "react";
  
+/**
+ * Returns an object with state and functions related to the user profile.
+ *
+ * @return {Object} An object with the following properties:
+ *   - modal: A boolean indicating whether the modal is open or closed.
+ *   - openModal: A function to toggle the modal's visibility.
+ *   - sidebarToggle: A boolean indicating whether the sidebar is toggled.
+ *   - isSidebarVisible: A boolean indicating whether the sidebar is visible.
+ *   - isProfileVisible: A boolean indicating whether the profile is visible.
+ *   - setIsProfileVisible: A function to set the visibility of the profile.
+ *   - setIsSidebarVisible: A function to set the visibility of the sidebar.
+ *   - setSidebarToggle: A function to toggle the sidebar.
+ */
 export const useProfile = () => {
     const [sidebarToggle, setSidebarToggle] = useState(false);
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);

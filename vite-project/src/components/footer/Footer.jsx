@@ -1,5 +1,10 @@
 import "../../index.css";
 import { FooterLinks } from './FooterLinks.jsx'
+/**
+ * Renders the footer component of the website.
+ *
+ * @return {JSX.Element} The footer component.
+ */
 export function Footer(){
     return(
         <footer className="bg-blue-900 w-full grid lg:p-16 p-10">

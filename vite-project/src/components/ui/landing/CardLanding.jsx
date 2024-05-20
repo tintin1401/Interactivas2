@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client'
 import { StepsContainer } from '../../containers/StepsContainer.jsx'
 import { motion, useScroll } from "framer-motion";
 
+/**
+ * Renders a card component for the landing page with a title and a list of steps.
+ *
+ * @return {JSX.Element} The rendered card component.
+ */
 export function CardLanding() {
     return (
         <div>

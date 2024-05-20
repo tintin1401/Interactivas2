@@ -4,6 +4,14 @@ import { InputNext } from "../inputs/InputNext.jsx";
 import { InputBack } from "../inputs/InputBack.jsx";
 import { useHealth } from "../hooks/useHealth.js";
 
+/**
+ * Renders a component for the Health step of a multi-step form.
+ *
+ * @param {Object} props - The properties for the Health component.
+ * @param {function} props.addEvent - A function to be called when the event is created.
+ * @param {function} props.AddBack - A function to go back to the previous step.
+ * @return {JSX.Element} The rendered Health component.
+ */
 export function Health({addEvent, AddBack}) {
   const { hours, physical, gender, onCreateEvent } = useHealth(addEvent);
   return (

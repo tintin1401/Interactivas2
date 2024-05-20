@@ -1,5 +1,18 @@
 import "../../index.css";
 
+/**
+ * Renders an event card component with the given image, title, date, event, hour, and description.
+ *
+ * @param {Object} props - The properties for the event card component.
+ * @param {string} props.image - The URL of the image for the event card.
+ * @param {string} props.title - The title of the event.
+ * @param {string} props.date - The date of the event.
+ * @param {string} props.event - The type of the event.
+ * @param {string} props.hour - The time of the event.
+ * @param {string} props.description - The description of the event.
+ * @param {boolean} [props.calender=false] - Whether the event card is displayed in a calendar view.
+ * @return {JSX.Element} The rendered event card component.
+ */
 export function EventCard({ image, title, date, event, hour, description,calender=false}) {
     return (
 

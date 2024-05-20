@@ -4,6 +4,12 @@ import { useInView, motion} from "framer-motion";
 import { useRef } from "react";
 import { NavLink } from 'react-router-dom'
 import { useComponentContext } from '../../../components/hooks/useComponentContext.jsx';
+
+/**
+ * Renders the landing page header component.
+ *
+ * @return {JSX.Element} The rendered landing page header component.
+ */
 export function HeaderLanding() {
     const { setCurrentComponent } = useComponentContext();
 

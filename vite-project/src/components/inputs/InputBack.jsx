@@ -1,4 +1,13 @@
 import "../../index.css";
+/**
+ * Renders an input button with a blue background color and white text. 
+ * The button triggers the `addBack` function when clicked.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} props.value - The value displayed on the button.
+ * @param {function} props.addBack - The function to be called when the button is clicked.
+ * @return {JSX.Element} - The rendered input button.
+ */
 export const InputBack = ({ value ,addBack}) => {
   return (
     <input

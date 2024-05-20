@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { InputProfile } from "../inputs/InputProfile";
 
+/**
+ * Renders a form for changing the user's password.
+ *
+ * @param {Object} props - The props object containing the following property:
+ *   - close: A function to be called when the form is closed.
+ * @return {JSX.Element} The rendered form component.
+ */
 export function ChangePassword({ close }) {
   return (
       <div className="grid justify-center md:m-4">

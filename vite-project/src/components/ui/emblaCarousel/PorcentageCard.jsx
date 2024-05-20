@@ -1,6 +1,11 @@
 import "../../../index.css";
 import { CircularProgressBar } from '../progressBar/CircularProgressbar'
 
+/**
+ * Renders a percentage card component.
+ *
+ * @return {JSX.Element} The rendered percentage card component.
+ */
 export function PorcentageCard() {
     return (
         <div className="embla__slide flex items-center justify-center">

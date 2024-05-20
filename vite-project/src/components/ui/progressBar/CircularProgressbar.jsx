@@ -2,6 +2,13 @@ import React from "react";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
+/**
+ * Renders a circular progress bar component with a given percentage value.
+ *
+ * @param {Object} props - The properties object.
+ * @param {number} props.percentage - The percentage value to display on the progress bar.
+ * @return {JSX.Element} The circular progress bar component.
+ */
 export const CircularProgressBar = ({ percentage }) => {
     return (
         <CircularProgressbar

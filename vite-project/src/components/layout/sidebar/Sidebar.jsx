@@ -2,6 +2,12 @@ import "../../../index.css";
 import logo from "../../../assets/imgs/logo-white.svg";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Renders the sidebar component.
+ *
+ * @param {object} sidebarToggle - A boolean value indicating whether the sidebar is toggled or not.
+ * @return {JSX.Element} The rendered sidebar component.
+ */
 const Sidebar = ({sidebarToggle}) =>{
     return(
         <aside className={`w-64 bg-blue-900 text-white ${sidebarToggle? '' : 'hidden'} sd:block fixed inset-y-0 z-50 ff-main`}>

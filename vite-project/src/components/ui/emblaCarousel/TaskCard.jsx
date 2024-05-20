@@ -1,4 +1,12 @@
 import "../../../index.css";
+/**
+ * Renders a task card component with the given number and tasks.
+ *
+ * @param {Object} props - The properties object.
+ * @param {number} props.number - The number to be displayed on the task card.
+ * @param {string} props.tasks - The tasks to be displayed on the task card.
+ * @return {JSX.Element} The rendered task card component.
+ */
 export function TaskCard({number, tasks}) {
     return(
     <div className="embla__slide flex items-center justify-center">

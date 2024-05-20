@@ -2,6 +2,13 @@ import "../../index.css";
 import { InputLogin } from "../inputs/InputLogin.jsx";
 import { InputNext } from "../inputs/InputNext.jsx";
 
+/**
+ * CreateAcount is a React functional component that renders a form for creating a new account.
+ *
+ * @param {Object} props - The props object containing the following property:
+ *   - addEvent: A function to be called when the form is submitted.
+ * @return {JSX.Element} The rendered form.
+ */
 export function CreateAcount({addEvent}) {
   const onCreateEvent = (event) => {
      event.preventDefault(); 

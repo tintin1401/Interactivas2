@@ -1,4 +1,13 @@
 import "../../index.css";
+/**
+ * Renders a container component for the About Us section with a title, description, and icon.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.title - The title of the About Us section.
+ * @param {string} props.description - The description of the About Us section.
+ * @param {string} props.icon - The path to the icon for the About Us section.
+ * @return {JSX.Element} The rendered About Us container component.
+ */
 export function ContainerAboutUs({title,description,icon}){
     return(
         <div className="grid grid-cols-1 my-[2rem] justify-center gap-4 lg:flex">

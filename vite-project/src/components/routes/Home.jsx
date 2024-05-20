@@ -6,6 +6,11 @@ import { Index } from '../ui/landing/Index.jsx';
 import { Schedule } from '../cards/Schedule.jsx'; 
 import { motion } from "framer-motion";
 
+/**
+ * Renders the Home component.
+ *
+ * @return {JSX.Element} The rendered Home component.
+ */
 function Home() {
     const [sidebarToggle, setSidebarToggle] = useState(false);
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);

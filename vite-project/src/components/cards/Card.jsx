@@ -1,4 +1,13 @@
 import "../../index.css";
+/**
+ * Renders a card component with a title, description, and image.
+ *
+ * @param {Object} props - The properties for the card component.
+ * @param {string} props.title - The title of the card.
+ * @param {string} props.description - The description of the card.
+ * @param {string} props.img - The URL of the image for the card.
+ * @return {JSX.Element} The rendered card component.
+ */
 export function Card({title,description,img}){
     return(
         <div className='rounded-lg shadow-lg'>
