@@ -1,4 +1,9 @@
 import "../../index.css";
+/**
+ * Renders a section containing personal information inputs.
+ *
+ * @return {JSX.Element} The rendered section with personal information inputs.
+ */
 export function PersonalInformation() {
     return (
         <section>

@@ -1,4 +1,11 @@
 import "../../index.css";
+/**
+ * Renders a component with two buttons: "Save" and "Reset". 
+ * The "Save" button has a white text color on an orange background, 
+ * while the "Reset" button has a black text color with a 2px orange border.
+ *
+ * @return {JSX.Element} The rendered component with two buttons.
+ */
 export function Buttons() {
     return (
         <div className='grid gap-6 lg:grid-cols-2 grid-cols-1 lg:w-[20rem] w-full pb-8 '>

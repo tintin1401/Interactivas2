@@ -3,6 +3,11 @@ import { ChangePassword } from '../profile/ChangePassword.jsx';
 import Modal from '@mui/material/Modal';
 import { useProfile } from '../hooks/useProfile.js';
 import { InputProfile } from '../inputs/InputProfile.jsx';
+/**
+ * Renders the Account Settings component.
+ *
+ * @return {JSX.Element} The rendered Account Settings component.
+ */
 export function AccountSettings() {
 
     const { modal, openModal } = useProfile();
