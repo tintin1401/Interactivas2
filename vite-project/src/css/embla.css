@@ -1,5 +1,5 @@
 .embla {
-    max-width: 60rem; /* ajusta el largo del carousel. El default es 48rem. max-width: 70rem*/
+    max-width: 55rem; /* ajusta el largo del carousel. El default es 48rem. max-width: 70rem*/
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
@@ -22,8 +22,8 @@
 
 @media (max-width: 768px) {
     .embla {
-        max-width: 38rem;
-        --slide-size: 70%; 
+        max-width: 20rem;
+        --slide-size: 80%; 
     }
     .embla-card {
         width: 200px;
@@ -38,7 +38,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1280px) {
     .embla {
         max-width: 45rem;
         --slide-size: 35%; 

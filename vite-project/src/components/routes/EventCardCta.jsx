@@ -7,6 +7,7 @@ import ToggleSidebar from '../layout/sidebar/ToggleSidebar.jsx'
 import React, { useState, useEffect } from 'react';
 import "../../index.css";
 import { motion } from "framer-motion";
+import { useHome } from '../hooks/useHome.js';
 
 /**
  * Renders the EventCardCta component, which displays a sidebar with a schedule and calendar.
@@ -14,36 +15,14 @@ import { motion } from "framer-motion";
  * @return {JSX.Element} The rendered component.
  */
 export function EventCardCta() {
-    const [sidebarToggle, setSidebarToggle] = useState(false);
-    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-    const [isScheduleVisible, setIsScheduleVisible] = useState(false);
-    const [isCalendarVisible, setIsCalendarVisible] = useState(false);
+    const { sidebarToggle, isSidebarVisible, isScheduleVisible, setSidebarToggle, isCalendarVisible } = useHome();
 
     const events = [
         { "id": 1, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
         { "id": 2, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
         { "id": 3, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
         { "id": 4, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
-
     ]
-
-    useEffect(() => {
-        const sidebarTimer = setTimeout(() => {
-            setIsSidebarVisible(true);
-        }, 500);
-        const scheduleTimer = setTimeout(() => {
-            setIsScheduleVisible(true);
-        }, 500);
-        const calendarTimer = setTimeout(() => {
-            setIsCalendarVisible(true);
-        }, 500);
-
-        return () => {
-            clearTimeout(sidebarTimer);
-            clearTimeout(scheduleTimer);
-            clearTimeout(calendarTimer);
-        };
-    }, []);
 
     return (
         <div className="flex md:h-screen bg-[#EFF6FE]">
