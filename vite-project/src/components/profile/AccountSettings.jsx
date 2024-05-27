@@ -30,7 +30,7 @@ export function AccountSettings() {
                 <InputProfile placeholder="Email" type="email" id="email" label="Email" />
                 <div className='grid '>
                     <InputProfile placeholder="Password" type="password" id="password" label="Password" />
-                    <a className=' text-blue-700 items-end ' onClick={openModal}>Change</a>
+                    <a className=' text-blue-700 items-end cursor-pointer' onClick={openModal}>Change</a>
                 </div>
             </div>
             <Modal open={modal} onClose={openModal}>
