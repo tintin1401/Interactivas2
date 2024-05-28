@@ -38,7 +38,7 @@ function Home() {
             >
                 <Sidebar sidebarToggle={sidebarToggle} />
             </motion.div>
-            <main className="lg:grid lg:justify-center bg-[#EFF6FE] content-center w-screen lg:ml-64">
+            <main className="lg:grid lg:justify-center bg-[#EFF6FE] content-center w-screen lg:ml-64 mb-10">
                 <div className="mt-10 ml-5 mr-5 mb-0">
                     <ToggleSidebar sidebarToggle={sidebarToggle}
                         setSidebarToggle={setSidebarToggle} />
