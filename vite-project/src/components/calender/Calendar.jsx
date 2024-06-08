@@ -9,23 +9,34 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import useFetchData from "../hooks/useFetchData.js";
 
 /**
  * Mimic fetch with abort controller https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort
  * ⚠️ No IE11 support
  */
-function fakeFetch(date, { signal }) {
+
+
+function getMonth(data, month) {
+  const days = [];
+  data.forEach(prueba => {
+    const day = dayjs(prueba.date);
+    if (day.$M === month) {
+      days.push(day.$D);
+    }
+  });
+  return days;
+
+}
+function fakeFetch(date, { signal },data) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
-      let daysToHighlight = [];//para marcar dias en el calendario
-      
-      if (date.$y === 2024 && date.$M === 4) {
-         daysToHighlight = [17];
-      }
 
-      if (date.$y === 2024 && date.$M === 3) {
-        daysToHighlight = [1,2];
-     }
+      let daysToHighlight = [];//para marcar dias en el calendario
+
+      if (date.$y === 2024) {
+        daysToHighlight = getMonth(data, date.$M);
+      }
 
       resolve({ daysToHighlight });
     }, 200);
@@ -67,7 +78,7 @@ function ServerDay(props) {
     <Badge
       key={props.day.toString()}
       overlap="circular"
-      badgeContent={isSelected ? <AccessTimeIcon/> : undefined}
+      badgeContent={isSelected ? <AccessTimeIcon /> : undefined}
     >
       <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
     </Badge>
@@ -81,24 +92,27 @@ function ServerDay(props) {
  *
  * @return {JSX.Element} The rendered calendar component.
  */
-export  function Calendar() {
+export function Calendar() {
   const requestAbortController = React.useRef(null);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
-  
+  const [highlightedDays, setHighlightedDays] = React.useState();
+  const { data } = useFetchData("http://localhost/calenderbackend/public/api/activities/day");
 
-  
-/**
- * Fetches highlighted days from a server and updates the state with the fetched data.
- *
- * @param {Date} date - The date for which to fetch highlighted days.
- * @return {void} This function does not return anything.
- */
+
+
+
+  /**
+   * Fetches highlighted days from a server and updates the state with the fetched data.
+   *
+   * @param {Date} date - The date for which to fetch highlighted days.
+   * @return {void} This function does not return anything.
+   */
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
     fakeFetch(date, {
       signal: controller.signal,
-    })
+    },data)
+
       .then(({ daysToHighlight }) => {
         setHighlightedDays(daysToHighlight);
         setIsLoading(false);
@@ -113,10 +127,10 @@ export  function Calendar() {
     requestAbortController.current = controller;
   };
 
-  
+
   React.useEffect(() => {
     fetchHighlightedDays(initialValue);
-    
+
     // abort request on unmount
     return () => requestAbortController.current?.abort();
   }, []);
@@ -137,28 +151,28 @@ export  function Calendar() {
     setIsLoading(true);
     setHighlightedDays([]);
     fetchHighlightedDays(date);
-    
+
 
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DateCalendar']}>
-      <DemoItem label={'Calendar'}>
-      <DateCalendar
-        loading={isLoading}
-        onMonthChange={handleMonthChange}
-        renderLoading={() => <DayCalendarSkeleton />}
-        slots={{
-          day: ServerDay,
-        }}
-        slotProps={{
-          day: {
-            highlightedDays,
-          },
-        }}
-      />
-              </DemoItem>
+        <DemoItem label={'Calendar'}>
+          <DateCalendar
+            loading={isLoading}
+            onMonthChange={handleMonthChange}
+            renderLoading={() => <DayCalendarSkeleton />}
+            slots={{
+              day: ServerDay,
+            }}
+            slotProps={{
+              day: {
+                highlightedDays,
+              },
+            }}
+          />
+        </DemoItem>
 
       </DemoContainer>
 
