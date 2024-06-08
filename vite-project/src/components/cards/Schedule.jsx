@@ -1,5 +1,6 @@
 import "../../index.css";
 import { EventCard } from "./EventCard";
+import { useFetchActivities } from "../hooks/useFetchActivities";
 
 /**
  * Renders a schedule component that displays a list of events.
@@ -8,19 +9,27 @@ import { EventCard } from "./EventCard";
  * @param {Array} props.items - An array of event objects to be displayed.
  * @return {JSX.Element} The rendered schedule component.
  */
-export function Schedule({items}) {
+export function Schedule() {
 
-    return(
-        <>
-            {items.map(item => <EventCard
+    const { data } = useFetchActivities();
+
+    const createCards = (items) => {
+        return items.map(item => <EventCard
             key={item.id}
             image={item.image}
-            title={item.title}
+            title={item.name}
             date={item.date}
-            event={item.event}
+            event={item.labels_name}
             hour={item.hour}
             description={item.description}
-            calender={item.calender}/>)}
+            calender={item.calender}
+        />)
+    }
+
+    return (
+        <>
+        { createCards(data) }
         </>
     );
+
 }
