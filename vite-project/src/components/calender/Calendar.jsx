@@ -150,8 +150,10 @@ export function Calendar() {
 
     setIsLoading(true);
     setHighlightedDays([]);
+  if (data===undefined) {
+  }else{
     fetchHighlightedDays(date);
-
+  }
 
   };
 

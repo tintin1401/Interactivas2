@@ -8,6 +8,8 @@ import React, { useState, useEffect } from 'react';
 import "../../index.css";
 import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
+import useFetchData from "../hooks/useFetchData.js";
+
 
 /**
  * Renders the EventCardCta component, which displays a sidebar with a schedule and calendar.
@@ -17,12 +19,26 @@ import { useHome } from '../hooks/useHome.js';
 export function EventCardCta() {
     const { sidebarToggle, isSidebarVisible, isScheduleVisible, setSidebarToggle, isCalendarVisible } = useHome();
 
-    const events = [
-        { "id": 1, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
-        { "id": 2, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
-        { "id": 3, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
-        { "id": 4, "image": "https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png", "title": "Task", "date": "August 30, 2024", "event": "Event", "hour": "5:00 p.m.", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod earum, nemo amet sint?.", "calender": "true" },
-    ]
+    const [value, setValue] = useState(0);
+    const [url, setUrl] = useState("http://localhost/calenderbackend/public/api/activities/all");
+    const urltest = value === 0
+        ? "http://localhost/calenderbackend/public/api/activities/all"
+        : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
+    setUrl
+    const { data, loading } = useFetchData(url);
+
+    useEffect(() => {
+        addEvent(value);
+
+    }, []);
+
+
+    const addEvent = (value) => {
+
+        setValue(value);
+    };
+
+
 
     return (
         <div className="flex md:h-screen bg-[#EFF6FE]">
@@ -51,7 +67,11 @@ export function EventCardCta() {
                                 </div>
                                 <div className="scroll scrollbar-thumb-orange-700 scrollbar-track-white overflow-y-scroll pr-5 lg:scroll-smooth lg:scrollbar-thin h-[65vh]">
                                     <section className="grid gap-4">
-                                        <Schedule items={events} />
+                                        {loading ? (
+                                            <p value="">loading</p>
+                                        ) : (
+                                            <Schedule activities={data} />
+                                        )}  
                                     </section>
                                 </div>
                             </section>
@@ -63,7 +83,7 @@ export function EventCardCta() {
                         >
                             <section className="grid bg-white rounded-3xl p-2 mb-4 md:p-6">
                                 <div className="lg:mt-[3rem]">
-                                    <SelectedCourse />
+                                    <SelectedCourse addEvent={addEvent} />
                                     <TagCategories />
                                     <Calendar />
                                 </div>

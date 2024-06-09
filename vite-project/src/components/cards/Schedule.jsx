@@ -9,9 +9,7 @@ import { useFetchActivities } from "../hooks/useFetchActivities";
  * @param {Array} props.items - An array of event objects to be displayed.
  * @return {JSX.Element} The rendered schedule component.
  */
-export function Schedule() {
-
-    const { data } = useFetchActivities();
+export function Schedule({activities}) {
 
     const createCards = (items) => {
         return items.map(item => <EventCard
@@ -28,7 +26,11 @@ export function Schedule() {
 
     return (
         <>
-        { createCards(data) }
+            
+           {
+            createCards(activities)
+           }
+            
         </>
     );
 
