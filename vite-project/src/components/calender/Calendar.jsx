@@ -19,18 +19,27 @@ import useFetchData from "../hooks/useFetchData.js";
 
 function getMonth(data, month) {
   const days = [];
-  data.forEach(prueba => {
-    const day = dayjs(prueba.date);
-    if (day.$M === month) {
-      days.push(day.$D);
-    }
-  });
-  return days;
+  if(data!=undefined){
+
+    data.forEach(prueba => {
+      const day = dayjs(prueba.date);
+      if (day.$M === month) {
+        days.push(day.$D);
+      }
+    });
+    return days;
+  }else{
+    setTimeout(() => {
+      
+    }, 2000);
+  }
+  
 
 }
 function fakeFetch(date, { signal },data) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
+
 
       let daysToHighlight = [];//para marcar dias en el calendario
 
@@ -39,7 +48,7 @@ function fakeFetch(date, { signal },data) {
       }
 
       resolve({ daysToHighlight });
-    }, 200);
+    }, 5000);
 
     /**
      * Handles the abort event of the signal.
@@ -151,6 +160,7 @@ export function Calendar() {
     setIsLoading(true);
     setHighlightedDays([]);
   if (data===undefined) {
+    console.log("undefine");
   }else{
     fetchHighlightedDays(date);
   }
