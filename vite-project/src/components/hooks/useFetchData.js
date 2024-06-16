@@ -1,25 +1,27 @@
-import { useState, useEffect } from "react";
+// hooks/useFetchData.js
+import { useState, useEffect } from 'react';
 
-export const useFetchData = (url) => {
-  const [data, setData] = useState();
-  const [loading,setIsLoading]=useState(true);
-  
-  const getData = async () => {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      setData(data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+const useFetchData = (url) => {
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    getData();
-  }, []);
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+                setData(result);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+            setLoading(false);
+        };
 
-  return { data,loading };
+        fetchData();
+    }, [url]);
+
+    return { data, loading };
 };
 
 export default useFetchData;

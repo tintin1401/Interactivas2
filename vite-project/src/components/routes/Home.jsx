@@ -22,7 +22,9 @@ function Home() {
         ? "http://localhost/calenderbackend/public/api/activities/all"
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
     setUrl
-    const { data, loading } = useFetchData(url);
+    const { data: activities, loading: loadingActivities } = useFetchData(url);
+    /*const { data: tasksPerDay, loading: loadingTasksPerDay } = useFetchData("http://localhost/backend-Actualizado8/calenderbackend/public/api/activities/tasks/completed-per-day");*/
+    const { data: tasksPerWeek, loading: loadingTasksPerWeek } = useFetchData("http://localhost/calenderbackend/public/api/activities/tasks/completed-per-week");
 
     useEffect(() => {
         addEvent(value);
@@ -68,26 +70,25 @@ function Home() {
                     <div className="ml-10">
                         <h2 className="ff-main text-2xl font-bold pb-[1rem] pl-[1rem] pr-[1rem] pt-[1.5rem] md:pb-[0.5rem] md:pt-[1rem] m-0 text-blue-600">Statistics</h2>
                     </div>
-                    <Index />
+                    <Index tasksPerWeek={tasksPerWeek} loadingTasksPerWeek={loadingTasksPerWeek} />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: isScheduleVisible ? 1 : 0 }}
                     transition={{ duration: 0.5, delay: 3 }}
                 >
-                    {/*<ScheduleContainer />*/}
                     <h2 className="ff-main text-2xl font-bold pb-[1rem] px-[1rem] pt-[1.5rem] ml-10  text-blue-600">Events</h2>
                     <div className="grid xl:grid-cols-[repeat(2,minmax(0,1fr))] gap-5 mx-5">
-                        {loading ? (
+                        {loadingActivities ? (
                             <p value="">loading</p>
                         ) : (
-                            <Schedule activities={data} />
+                            <Schedule activities={activities} />
                         )}
                     </div>
                 </motion.div>
             </main>
         </div>
-    )
+    );
 }
 
 export default Home

@@ -1,26 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import EmblaCarousel from '../emblaCarousel/EmblaCarousel.jsx'
-import '../../../css/embla.css'
-import '../../../index.css'
+// components/ui/landing/Index.jsx
+import React from 'react';
+import EmblaCarousel from '../emblaCarousel/EmblaCarousel.jsx';
+import '../../../css/embla.css';
+import '../../../index.css';
 
-
-/**
- * Renders the Index component which displays an EmblaCarousel with 3 slides.
- *
- * @return {JSX.Element} The rendered Index component.
- */
-export function Index() {
+export function Index({ tasksPerWeek, loadingTasksPerWeek }) {
   const OPTIONS = { loop: true };
-  const SLIDE_COUNT = 5;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-  const App = () => (
-    <>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-    </>
+  return (
+    <div>
+      <EmblaCarousel slides={[]} options={OPTIONS} />
+      <div className="statistics mt-6">
+        {/* <h3 className="text-xl font-bold mt-4">Tasks Completed Per Week</h3>
+        {loadingTasksPerWeek ? (
+          <p>Loading...</p>
+        ) : (
+          <ul>
+            {tasksPerWeek.map((task, index) => (
+              <li key={index}>Week {task.week}: {task.count} tasks completed</li>
+            ))}
+          </ul>
+        )} */}
+      </div>
+    </div>
   );
-
-  return <App />;
 }
-
