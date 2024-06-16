@@ -48,7 +48,7 @@ function fakeFetch(date, { signal },data) {
       }
 
       resolve({ daysToHighlight });
-    }, 5000);
+    }, 500);
 
     /**
      * Handles the abort event of the signal.
