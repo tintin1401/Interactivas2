@@ -21,7 +21,7 @@ export function EventCard({ image, title, date, event, hour, description,calende
     
         <div className={`flex flex-col  xl:flex-row bg-blue-600 rounded-3xl p-4 gap-2 ${calender ? 'lg:flex-col' : 'md:flex-row'}`}>
 
-            <img className={`rounded-3xl object-cover w-fit ${calender ? 'lg:w-fit' : 'md:w-[22vw]'} xl:w-[13vw]`} src={`${image}`} alt="event"/>
+            <img className={`rounded-3xl object-cover w-full ${calender ? 'lg:w-fit' : 'md:w-[22vw]'} ${calender ? 'lg:h-[8rem]' : 'h-[8rem]'} xl:w-[13vw]`} src={`${image}`} alt="event"/>
                 <div className="grid gap-3 w-full">
 
                     <div className="flex justify-between ff-main">
