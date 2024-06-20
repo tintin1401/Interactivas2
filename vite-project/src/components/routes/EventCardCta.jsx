@@ -20,22 +20,30 @@ export function EventCardCta() {
     const { sidebarToggle, isSidebarVisible, isScheduleVisible, setSidebarToggle, isCalendarVisible } = useHome();
 
     const [value, setValue] = useState(0);
-    const [url, setUrl] = useState("http://localhost/calenderbackend/public/api/activities/all");
     const urltest = value === 0
         ? "http://localhost/calenderbackend/public/api/activities/all"
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
-    setUrl
-    const { data, loading } = useFetchData(url);
+    const { data, loading ,setData,setLoading} = useFetchData(urltest);
 
-    useEffect(() => {
-        addEvent(value);
+    async function first() {
+        const urltest = value === 0
+        ? "http://localhost/calenderbackend/public/api/activities/all"
+        : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
+        try{
+            const response = await fetch(urltest);
+            const data = await response.json();
+            setData(data);
 
-    }, []);
-
+        }catch(error){
+            console.log(error);
+        }
+        setLoading(false);
+    }
 
     const addEvent = (value) => {
-
         setValue(value);
+        setLoading(true);
+        first();
     };
 
 
