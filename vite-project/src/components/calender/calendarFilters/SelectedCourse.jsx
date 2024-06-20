@@ -1,5 +1,5 @@
 import "../../../index.css";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useFetchData from "../../hooks/useFetchData";
 
 /**
@@ -10,23 +10,22 @@ import useFetchData from "../../hooks/useFetchData";
 export function SelectedCourse({ addEvent }) {
   const [selectedItem, setSelectedItem] = useState('');
 
-  const handleSelectChange = (event) => {
-    setSelectedItem(event.target.value);
+  const { data, loading } = useFetchData("http://localhost/calenderbackend/public/api/courses/name");
+  const handleSelectChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedItem(selectedValue); // Actualiza el estado
+    addEvent(selectedValue); // Llama a la función addEvent
   };
 
-  const { data, loading } = useFetchData("http://localhost/calenderbackend/public/api/courses/name");
-
-
-  const courses = data;
 
   return (
     <div className="border-2 border-blue-60000 p-4 rounded-2xl ff-main ">
       <h2 className="font-bold mb-3">Courses</h2>
-      <select value={selectedItem} onChange={(e) => {
-        addEvent(e.target.value);
-      }} className="text-gray-600 block w-full border-none outline-none">
+      <select value={selectedItem}         
+        onChange={handleSelectChange} 
+       className="text-gray-600 block w-full border-none outline-none">
 
-        <option value="">Choose a course</option>
+        <option value="0">Choose a course</option>
 
         {loading ? (
           <option value="">loading</option>

@@ -26,7 +26,7 @@ export function EventCardCta() {
     const { data, loading ,setData,setLoading} = useFetchData(urltest);
 
     async function first() {
-        const urltest = value === 0
+        const urltest = value == 0
         ? "http://localhost/calenderbackend/public/api/activities/all"
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
         try{
@@ -41,6 +41,7 @@ export function EventCardCta() {
     }
 
     const addEvent = (value) => {
+        console.log(value);
         setValue(value);
         setLoading(true);
         first();
