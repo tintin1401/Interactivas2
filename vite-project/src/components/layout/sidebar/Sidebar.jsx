@@ -1,6 +1,7 @@
 import "../../../index.css";
 import logo from "../../../assets/imgs/logo-white.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 /**
  * Renders the sidebar component.
@@ -9,6 +10,16 @@ import { NavLink } from "react-router-dom";
  * @return {JSX.Element} The rendered sidebar component.
  */
 const Sidebar = ({sidebarToggle}) =>{
+  const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (searchTerm) {
+            navigate(`/search-results?name=${searchTerm}`);
+        }
+    };
+
     return(
         <aside className={`w-64 bg-blue-900 text-white ${sidebarToggle? '' : 'hidden'} sd:block fixed inset-y-0 z-50 ff-main`}>
           <div className='flex items-center justify-center h-16 m-10'>
@@ -52,9 +63,9 @@ const Sidebar = ({sidebarToggle}) =>{
             </ul>
           </nav>
 
-            <form className='bg-white text-black text-lg flex rounded-2xl px-4 m-10' action="">
-                <input className="bg-[url('./assets/imgs/search.svg')] bg-no-repeat bg-center p-[.60rem_1.10rem]" type="submit" value=""/>
-                <input className="border-none outline-none p-[.5rem] w-full" type="text" placeholder="Search"/>
+            <form className='bg-white text-black text-lg flex rounded-2xl px-4 m-10' onSubmit={handleSearchSubmit}>
+              <input className="border-none outline-none p-[.5rem] w-full" type="text" placeholder="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+              <button className="bg-[url('./assets/imgs/search.svg')] bg-no-repeat bg-center p-[.60rem_1.10rem]" type="submit"></button>
             </form>
 
             <nav className="mx-10 mb-10 mt-20  border-t-2 border-t-stone-50">

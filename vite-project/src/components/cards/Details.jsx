@@ -12,7 +12,7 @@ export function Details() {
             return <p>Loading...</p>;
         }
         return (
-            <div className="lg:max-w-[800px] mx-auto grid lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 lg:p-12 p-4 bg-white rounded-3xl md:m-6">
+            <div className="lg:max-w-[800px] mx-auto grid lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 lg:p-12 p-6 bg-white rounded-3xl">
                 <div className="flex flex-col justify-center">
                     <h1 className='font-bold text-blue-700 text-3xl mb-4'>{activity[0].name}</h1>
                     <h2 className='font-bold text-xl'>{activity[0].courses_name}</h2>
