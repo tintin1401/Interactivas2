@@ -12,8 +12,9 @@ import { useFetchActivities } from "../hooks/useFetchActivities";
 export function Schedule({activities}) {
 
     const createCards = (items) => {
-        return items.map(item => <EventCard
+        return items.map(item => ( <EventCard
             key={item.id}
+            id={item.id}
             image={item.image}
             title={item.name}
             date={item.date}
@@ -21,7 +22,7 @@ export function Schedule({activities}) {
             hour={item.hour}
             description={item.description}
             calender={item.calender}
-        />)
+        />));
     }
 
     return (

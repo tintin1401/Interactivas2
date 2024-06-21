@@ -6,6 +6,8 @@ import { Auth } from './components/routes/Auth.jsx';
 import { Routes, Route, Navigate } from "react-router-dom";
 import { UserProfile } from './components/routes/UserProfile.jsx';
 import { ComponentProvider } from './components/hooks/useComponentContext.jsx';
+import { ActivityDetails } from './components/routes/ActivityDetails.jsx';
+import { Details } from './components/cards/Details.jsx';
 
 /**
  * Renders the main application component.
@@ -21,6 +23,7 @@ export function App() {
         <Route path="/landing" element={<Landing />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/profile" element={<UserProfile />} />
+        <Route path="/details" element={<ActivityDetails />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
       </ComponentProvider>

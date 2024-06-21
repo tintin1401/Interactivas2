@@ -1,4 +1,6 @@
+import React from 'react';
 import "../../index.css";
+import { NavLink } from 'react-router-dom';
 
 /**
  * Renders an event card component with the given image, title, date, event, hour, and description.
@@ -13,12 +15,18 @@ import "../../index.css";
  * @param {boolean} [props.calender=false] - Whether the event card is displayed in a calendar view.
  * @return {JSX.Element} The rendered event card component.
  */
-export function EventCard({ image, title, date, event, hour, description,calender=false}) {
+export function EventCard({ id, image, title, date, event, hour, description,calender=false}) {
+    const truncateDescription = (text, maxLength) => {
+        if (text.length <= maxLength) {
+            return text;
+        }
+        return text.slice(0, maxLength) + ' ...';
+    };
+    
     return (
 
         <>
-        
-    
+        <NavLink  to="/details" state={id} className="transition duration-300 transform hover:shadow-lg hover:scale-[1.02] rounded-3xl">
         <div className={`flex flex-col  xl:flex-row bg-blue-600 rounded-3xl p-4 gap-2 ${calender ? 'lg:flex-col' : 'md:flex-row'}`}>
 
             <img className={`rounded-3xl object-cover w-full ${calender ? 'lg:w-fit' : 'md:w-[22vw]'} ${calender ? 'lg:h-[8rem]' : 'h-[8rem]'} xl:w-[13vw]`} src={`${image}`} alt="event"/>
@@ -36,10 +44,13 @@ export function EventCard({ image, title, date, event, hour, description,calende
                         <h4 className="text-white text-xl">{hour}</h4>
                     </div>
 
-                    <p className="text-white text-sm ff-secondary">{description}</p>
+                    <p className="text-white text-sm ff-secondary">
+                        {truncateDescription(description, 50)}
+                    </p>
 
                 </div>
         </div>
+        </NavLink>
         </>
     )
 }
