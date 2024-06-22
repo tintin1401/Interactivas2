@@ -13,6 +13,8 @@ const EmblaCarousel = (props) => {
     const [cards, setCards] = useState([
         { id: 1, number: "0", tasks: "Tasks Completed Today" },
         { id: 2, number: "0", tasks: "Tasks Completed per Week" },
+        { id: 3, number: "0", tasks: "Tasks Pending Today" },
+        { id: 4, number: "0", tasks: "Tasks Pending per week" },
     ]);
 
     useEffect(() => {
@@ -60,6 +62,32 @@ const EmblaCarousel = (props) => {
                 setCards(prevCards => prevCards.map(card =>
                     card.id === 1
                     ? { ...card, number: todayTasks, tasks: "Tasks Completed Today" } 
+                    : card
+                ));
+            })
+            .catch(error => console.error('Error fetching daily tasks:', error));
+
+            fetch("http://localhost/calenderbackend/public/api/activities/tasks/pending-per-week")
+            .then(response => response.json())
+            .then(data => {
+                const weekPendingTasks = data.reduce((sum, task) => sum + (task.count || 0), 0);
+
+                setCards(prevCards => prevCards.map(card =>
+                    card.id === 4
+                    ? { ...card, number: weekPendingTasks, tasks: "Tasks Pending per Week" } 
+                    : card
+                ));
+            })
+            .catch(error => console.error('Error fetching daily tasks:', error));
+
+            fetch("http://localhost/calenderbackend/public/api/activities/tasks/pending-per-day")
+            .then(response => response.json())
+            .then(data => {
+                const todayPendingTasks = data.reduce((sum, task) => sum + (task.count || 0), 0);
+
+                setCards(prevCards => prevCards.map(card =>
+                    card.id === 3
+                    ? { ...card, number: todayPendingTasks, tasks: "Tasks Pending Today" } 
                     : card
                 ));
             })
