@@ -10,6 +10,7 @@ import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import useFetchData from "../hooks/useFetchData.js";
+import { useUser } from '../../context/UserContext.jsx';
 
 /**
  * Mimic fetch with abort controller https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort
@@ -105,7 +106,8 @@ export function Calendar() {
   const requestAbortController = React.useRef(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [highlightedDays, setHighlightedDays] = React.useState();
-  const { data } = useFetchData("http://localhost/calenderbackend/public/api/activities/day");
+  const { user } = useUser();
+  const { data } = useFetchData("http://localhost/calenderbackend/public/api/activities/"+user.id);
 
 
 

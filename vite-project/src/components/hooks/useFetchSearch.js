@@ -8,7 +8,7 @@ const useFetchSearch = (searchTerm) => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`http://localhost/calenderbackend/public/api/activities/search?name=${searchTerm}`);
+                const response = await fetch(`http://localhost/calenderbackend/public/api/activities/search/?name=${searchTerm}`);
                 const result = await response.json();
                 setData(result);
             } catch (error) {

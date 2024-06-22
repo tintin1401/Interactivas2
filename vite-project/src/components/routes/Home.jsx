@@ -7,6 +7,7 @@ import { Schedule } from '../cards/Schedule.jsx';
 import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
 import useFetchData from "../hooks/useFetchData.js";
+import { useUser } from '../../context/UserContext.jsx';
 
 /**
  * Renders the Home component.
@@ -15,9 +16,10 @@ import useFetchData from "../hooks/useFetchData.js";
  */
 function Home() {
     const { sidebarToggle, isSidebarVisible, isCtaVisible, isIndexVisible, isScheduleVisible, setSidebarToggle } = useHome();
-
+    const { user } = useUser();
+    console.log(user.id);
     const [value, setValue] = useState(0);
-    const [url, setUrl] = useState("http://localhost/calenderbackend/public/api/activities/all");
+    const [url, setUrl] = useState("http://localhost/calenderbackend/public/api/activities/"+user.id);
     const urltest = value === 0
         ? "http://localhost/calenderbackend/public/api/activities/all"
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;

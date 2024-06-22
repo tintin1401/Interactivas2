@@ -9,6 +9,7 @@ import "../../index.css";
 import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
 import useFetchData from "../hooks/useFetchData.js";
+import { useUser } from '../../context/UserContext.jsx';
 
 
 /**
@@ -18,10 +19,10 @@ import useFetchData from "../hooks/useFetchData.js";
  */
 export function EventCardCta() {
     const { sidebarToggle, isSidebarVisible, isScheduleVisible, setSidebarToggle, isCalendarVisible } = useHome();
-
+    const { user } = useUser();
     const [value, setValue] = useState(0);
     const urltest = value === 0
-        ? "http://localhost/calenderbackend/public/api/activities/all"
+        ? "http://localhost/calenderbackend/public/api/activities/"+user.id
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
     const { data, loading ,setData,setLoading} = useFetchData(urltest);
 
