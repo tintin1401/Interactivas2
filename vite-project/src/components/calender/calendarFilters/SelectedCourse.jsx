@@ -1,6 +1,7 @@
 import "../../../index.css";
 import { useState } from 'react';
 import useFetchData from "../../hooks/useFetchData";
+import { useUser } from '../../../context/UserContext.jsx';
 
 /**
  * Renders a select component for selecting a course.
@@ -9,8 +10,9 @@ import useFetchData from "../../hooks/useFetchData";
  */
 export function SelectedCourse({ addEvent }) {
   const [selectedItem, setSelectedItem] = useState('');
+  const { user } = useUser();
 
-  const { data, loading } = useFetchData("http://localhost/calenderbackend/public/api/courses/name");
+  const { data, loading } = useFetchData("http://localhost/calenderbackend/public/api/courses/name/"+user.id);
   const handleSelectChange = (e) => {
     const selectedValue = e.target.value;
     setSelectedItem(selectedValue); // Actualiza el estado
