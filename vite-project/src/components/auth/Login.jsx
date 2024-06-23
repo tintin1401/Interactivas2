@@ -1,21 +1,15 @@
-// src/components/Login.jsx
 import "../../index.css";
 import { InputLogin } from "../inputs/InputLogin.jsx";
-import { NavLink, useNavigate } from "react-router-dom"; 
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useComponentContext } from "../hooks/useComponentContext.jsx";
 import { login } from "../hooks/authService.js";
-import { useUser } from "../../context/UserContext.jsx"; 
+import { useUser } from "../../context/UserContext.jsx";
 
-/**
- * Login is a React functional component that renders a form for logging in.
- *
- * @return {JSX.Element} The rendered form.
- */
 export function Login() {
   const navigate = useNavigate();
   const { setCurrentComponent } = useComponentContext();
-  const { setUser } = useUser();
+  const { user, setUser } = useUser();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -37,7 +31,7 @@ export function Login() {
         password: formData.password,
       });
       console.log('Login successful:', response);
-      setUser(response.user); 
+      setUser(response.user);
       setCurrentComponent('Home');
       navigate('/');
     } catch (error) {

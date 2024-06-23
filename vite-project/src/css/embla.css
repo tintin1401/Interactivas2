@@ -7,12 +7,12 @@
 }
 
 .embla-card {
-    width: 220px;
+    width: 250px;
     height: 170px;
 }
 
 .embla-bg-card {
-    width: 210px;
+    width: 240px;
     height: 160px;
 }
 
@@ -41,14 +41,15 @@
 @media (min-width: 768px) and (max-width: 1280px) {
     .embla {
         max-width: 45rem;
-        --slide-size: 35%; 
+        --slide-size: 32%; 
+
     }
     .embla-card {
-        width: 200px;
+        width: 220px;
         height: 200px;
     }
     .embla-bg-card {
-        width: 190px;
+        width: 210px;
         height: 190px;
     }
     .embla-height-cta {
