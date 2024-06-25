@@ -4,7 +4,7 @@ import { SelectedCourse } from "../calender/calendarFilters/SelectedCourse";
 import { TagCategories } from "../calender/calendarFilters/TagCategories";
 import Sidebar from '../layout/sidebar/Sidebar.jsx';
 import ToggleSidebar from '../layout/sidebar/ToggleSidebar.jsx'
-import React, { useState, useEffect } from 'react';
+import  { useState } from 'react';
 import "../../index.css";
 import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
