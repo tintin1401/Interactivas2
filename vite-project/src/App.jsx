@@ -17,9 +17,9 @@ export function App() {
     return (
       <ComponentProvider>
         <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/calender" element={<EventCardCta />} />
-        <Route path="/landing" element={<Landing />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/details" element={<ActivityDetails />} />

@@ -4,7 +4,7 @@ import { SelectedCourse } from "../calender/calendarFilters/SelectedCourse";
 import { TagCategories } from "../calender/calendarFilters/TagCategories";
 import Sidebar from '../layout/sidebar/Sidebar.jsx';
 import ToggleSidebar from '../layout/sidebar/ToggleSidebar.jsx'
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import "../../index.css";
 import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
@@ -26,10 +26,7 @@ export function EventCardCta() {
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
     const { data, loading ,setData,setLoading} = useFetchData(urltest);
 
-    async function first() {
-        const urltest = value == 0
-        ? "http://localhost/calenderbackend/public/api/activities/all"
-        : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
+    async function first(urltest) {
         try{
             const response = await fetch(urltest);
             const data = await response.json();
@@ -45,12 +42,25 @@ export function EventCardCta() {
         console.log(value);
         setValue(value);
         setLoading(true);
-        first();
+        const urltest = value == 0
+        ? "http://localhost/calenderbackend/public/api/activities/"+user.id
+        : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
+        first(urltest);
     };
 
-
-
-
+    const task = () => {
+        const urltest ="http://localhost/calenderbackend/public/api/activities/"+user.id;
+        first(urltest);
+    }
+    const event = () => {
+        console.log("event");
+    }
+    const pending = () => {
+        console.log("pending");
+    }
+    const completed = () => {
+        console.log("completed");
+    }
 
     return (
         <div className="flex md:h-screen bg-[#EFF6FE]">
@@ -74,8 +84,8 @@ export function EventCardCta() {
                             <section className="grid gap-2 grid-rows-[auto] bg-white rounded-3xl px-6 pt-6 pb-6">
                                 <h2 className="text-left text-[2rem] font-bold text-blue-600 ">Today’s Schedule</h2>
                                 <div className="flex gap-4 font-bold ff-main">
-                                    <h2 className="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Pending</h2>
-                                    <h2 className="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]">Completed</h2>
+                                    <button className="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]" onClick={pending}>Pending</button>
+                                    <button className="hover:underline hover:decoration-4 cursor-pointer decoration-[#3262DE]" onClick={completed}>Completed</button>
                                 </div>
                                 <div className="scroll scrollbar-thumb-orange-700 scrollbar-track-white overflow-y-scroll pr-5 lg:scroll-smooth lg:scrollbar-thin h-[65vh]">
                                     <section className="grid gap-4">
@@ -98,7 +108,7 @@ export function EventCardCta() {
                             <section className="grid bg-white rounded-3xl p-2 mb-4 md:p-6">
                                 <div className="lg:mt-[3rem]">
                                     <SelectedCourse addEvent={addEvent} />
-                                    <TagCategories />
+                                    <TagCategories task={task} event={event} />
                                     <Calendar />
                                 </div>
                             </section>

@@ -33,7 +33,7 @@ export function Login() {
       console.log('Login successful:', response);
       setUser(response.user);
       setCurrentComponent('Home');
-      navigate('/');
+      navigate('/home');
     } catch (error) {
       console.error('Login error:', error);
       setError('Invalid credentials, please try again.');
@@ -47,7 +47,7 @@ export function Login() {
         onSubmit={handleSubmit}
       >
         <div className="grid justify-center mt-8">
-          <img className="w-52 hidden" src="https://randomuser.me/api/portraits/women/31.jpg" alt="Logo" />
+          <img className="w-52 " src="../src/assets/imgs/logo-white.svg" alt="Logo" />
         </div>
         <InputLogin
           name="email"
