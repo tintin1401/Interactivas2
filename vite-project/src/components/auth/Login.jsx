@@ -33,7 +33,7 @@ export function Login() {
       console.log('Login successful:', response);
       setUser(response.user);
       setCurrentComponent('Home');
-      navigate('/');
+      navigate('/home');
     } catch (error) {
       console.error('Login error:', error);
       setError('Invalid credentials, please try again.');
