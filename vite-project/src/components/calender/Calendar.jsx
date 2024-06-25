@@ -107,7 +107,7 @@ export function Calendar() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [highlightedDays, setHighlightedDays] = React.useState();
   const { user } = useUser();
-  const { data } = useFetchData("http://localhost/calenderbackend/public/api/activities/"+user.id);
+  const { data } = useFetchData(user ? `http://localhost/calenderbackend/public/api/activities/${user.id}` : null);
 
 
 
@@ -118,8 +118,17 @@ export function Calendar() {
    * @param {Date} date - The date for which to fetch highlighted days.
    * @return {void} This function does not return anything.
    */
+  React.useEffect(() => {
+    if (user && user.id && data) {
+      fetchHighlightedDays(new Date());
+    }
+  }, [user, data]);
+
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
+    requestAbortController.current = controller;
+    setIsLoading(true);
+
     fakeFetch(date, {
       signal: controller.signal,
     },data)
@@ -131,11 +140,9 @@ export function Calendar() {
       .catch((error) => {
         // ignore the error if it's caused by `controller.abort`
         if (error.name !== 'AbortError') {
-          throw error;
+          console.error(error);
         }
       });
-
-    requestAbortController.current = controller;
   };
 
 
@@ -161,13 +168,15 @@ export function Calendar() {
 
     setIsLoading(true);
     setHighlightedDays([]);
-  if (data===undefined) {
-    console.log("undefine");
-  }else{
-    fetchHighlightedDays(date);
-  }
+    if (user && user.id && data) {
+        fetchHighlightedDays(date);
+      }
+    };
 
-  };
+    if (!user || !user.id) {
+      return null;
+    }
+
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>

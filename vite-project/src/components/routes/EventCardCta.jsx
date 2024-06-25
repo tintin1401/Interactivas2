@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
 import useFetchData from "../hooks/useFetchData.js";
 import { useUser } from '../../context/UserContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 
 /**
@@ -20,32 +21,41 @@ import { useUser } from '../../context/UserContext.jsx';
 export function EventCardCta() {
     const { sidebarToggle, isSidebarVisible, isScheduleVisible, setSidebarToggle, isCalendarVisible } = useHome();
     const { user } = useUser();
+    const navigate = useNavigate();
     const [value, setValue] = useState(0);
-    const urltest = value === 0
-        ? "http://localhost/calenderbackend/public/api/activities/"+user.id
-        : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
-    const { data, loading ,setData,setLoading} = useFetchData(urltest);
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    async function first() {
-        const urltest = value == 0
-        ? "http://localhost/calenderbackend/public/api/activities/all"
-        : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
-        try{
-            const response = await fetch(urltest);
-            const data = await response.json();
-            setData(data);
+    useEffect(() => {
+        if (!user || !user.id) {
+            navigate('/landing');
+        } else {
+            const urltest = value === 0
+                ? `http://localhost/calenderbackend/public/api/activities/${user.id}`
+                : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
+            fetchData(urltest);
+        }
+    }, [user, value, navigate]);
 
-        }catch(error){
-            console.log(error);
+    const fetchData = async (url) => {
+        setLoading(true);
+        try {
+            const response = await fetch(url);
+            const result = await response.json();
+            setData(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
         }
         setLoading(false);
-    }
+    };
 
     const addEvent = (value) => {
-        console.log(value);
         setValue(value);
         setLoading(true);
-        first();
+        const url = value === 0
+            ? "http://localhost/calenderbackend/public/api/activities/all"
+            : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
+        fetchData(url);
     };
 
 
@@ -79,9 +89,11 @@ export function EventCardCta() {
                                     <section className="grid gap-4">
                                         {loading ? (
                                             <p value="">loading</p>
+                                        ) : data.length === 0 ? (
+                                            <p className="text-lg font-semibold mt-5 ml-10">No upcoming events</p>
                                         ) : (
                                             <Schedule activities={data} />
-                                        )}  
+                                        )} 
                                     </section>
                                 </div>
                             </section>

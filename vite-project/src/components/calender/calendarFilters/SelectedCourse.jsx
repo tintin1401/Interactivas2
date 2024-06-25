@@ -12,13 +12,16 @@ export function SelectedCourse({ addEvent }) {
   const [selectedItem, setSelectedItem] = useState('');
   const { user } = useUser();
 
-  const { data, loading } = useFetchData("http://localhost/calenderbackend/public/api/courses/name/"+user.id);
+  const { data, loading } = useFetchData(user ? `http://localhost/calenderbackend/public/api/courses/name/${user.id}` : null);
   const handleSelectChange = (e) => {
     const selectedValue = e.target.value;
     setSelectedItem(selectedValue); // Actualiza el estado
     addEvent(selectedValue); // Llama a la función addEvent
   };
 
+  if (!user || !user.id) {
+    return null;
+  }
 
   return (
     <div className="border-2 border-blue-60000 p-4 rounded-2xl ff-main ">

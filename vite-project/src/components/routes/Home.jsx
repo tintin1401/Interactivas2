@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import { useHome } from '../hooks/useHome.js';
 import useFetchData from "../hooks/useFetchData.js";
 import { useUser } from '../../context/UserContext.jsx';
+import { useNavigate } from 'react-router-dom';
+
 
 /**
  * Renders the Home component.
@@ -17,32 +19,38 @@ import { useUser } from '../../context/UserContext.jsx';
 function Home() {
     const { sidebarToggle, isSidebarVisible, isCtaVisible, isIndexVisible, isScheduleVisible, setSidebarToggle } = useHome();
     const { user } = useUser();
-    console.log(user.id);
+    const navigate = useNavigate();
     const [value, setValue] = useState(0);
-    const [url, setUrl] = useState("http://localhost/calenderbackend/public/api/activities/"+user.id);
+    const [url, setUrl] = useState("");
+
+    useEffect(() => {
+        if (!user || !user.id) {
+            navigate('/landing');
+        } else {
+            setUrl(`http://localhost/calenderbackend/public/api/activities/${user.id}`);
+        }
+    }, [user, navigate]);
+
     const urltest = value === 0
         ? "http://localhost/calenderbackend/public/api/activities/all"
         : `http://localhost/calenderbackend/public/api/activities/findcourses/${value}`;
-    setUrl
+
     const { data: activities, loading: loadingActivities } = useFetchData(url);
-    /*const { data: tasksPerDay, loading: loadingTasksPerDay } = useFetchData("http://localhost/backend-Actualizado8/calenderbackend/public/api/activities/tasks/completed-per-day");*/
     const { data: tasksPerWeek, loading: loadingTasksPerWeek } = useFetchData("http://localhost/calenderbackend/public/api/activities/tasks/completed-per-week");
 
     useEffect(() => {
         addEvent(value);
-
     }, []);
 
-
     const addEvent = (value) => {
-
         setValue(value);
     };
 
+    if (!user || !user.id) {
+        return null; // or you can return a loader here if you want to display something while redirecting
+    }
 
-   
-
-
+    
     return (
         <div className="flex">
             <motion.div
@@ -83,6 +91,8 @@ function Home() {
                     <div className="grid xl:grid-cols-[repeat(2,minmax(0,1fr))] gap-5 mx-5">
                         {loadingActivities ? (
                             <p value="">loading</p>
+                        ) : activities.length === 0 ? (
+                            <p className="text-lg font-semibold mt-5 ml-10">No upcoming events</p>
                         ) : (
                             <Schedule activities={activities} />
                         )}
