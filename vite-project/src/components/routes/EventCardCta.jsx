@@ -59,17 +59,26 @@ export function EventCardCta() {
     };
 
     const task = () => {
-        const urltest ="http://localhost/calenderbackend/public/api/activities/"+user.id;
+        const urltest ="http://localhost/calenderbackend/public/api/tasks/"+user.id;
         fetchData(urltest);
     }
     const event = () => {
-        console.log("event");
+        const urltest ="http://localhost/calenderbackend/public/api/events/"+user.id;
+        fetchData(urltest);
     }
+
+    const announcements = () => {
+        const urltest ="http://localhost/calenderbackend/public/api/announcements/"+user.id;
+        fetchData(urltest);
+    }
+
     const pending = () => {
-        console.log("pending");
+        const urltest ="http://localhost/calenderbackend/public/api/pending/"+user.id;
+        fetchData(urltest);
     }
     const completed = () => {
-        console.log("completed");
+        const urltest ="http://localhost/calenderbackend/public/api/completed/"+user.id;
+        fetchData(urltest);
     }
 
     return (
@@ -118,7 +127,7 @@ export function EventCardCta() {
                             <section className="grid bg-white rounded-3xl p-2 mb-4 md:p-6">
                                 <div className="lg:mt-[3rem]">
                                     <SelectedCourse addEvent={addEvent} />
-                                    <TagCategories task={task} event={event} />
+                                    <TagCategories task={task} event={event} announcement={announcements}/>
                                     <Calendar />
                                 </div>
                             </section>
