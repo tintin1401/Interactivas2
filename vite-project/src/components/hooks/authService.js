@@ -44,3 +44,16 @@ export const logout = async () => {
     }
     return response.json();
 };
+
+export const sendResetLink = async (data) => {
+    const response = await fetch(`${BASE_URL}/forgot/password`, {
+        ...fetchConfig,
+        method: 'POST',
+        body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Error al enviar el enlace de restablecimiento');
+    }
+    return response.json();
+};

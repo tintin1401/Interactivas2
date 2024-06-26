@@ -47,7 +47,7 @@ export function Login() {
         onSubmit={handleSubmit}
       >
         <div className="grid justify-center mt-8">
-          <img className="w-52 " src="../src/assets/imgs/logo-white.svg" alt="Logo" />
+          <img className="w-52" src="../src/assets/imgs/logo-white.svg" alt="Logo" />
         </div>
         <InputLogin
           name="email"
@@ -72,6 +72,15 @@ export function Login() {
           name="btn-login"
           value="Next"
         />
+        <p className="text-white m-5 mr-4 ml-2 ff-main">
+          Forgot your password?
+          <NavLink
+            to="/forgot-password"
+            className="text-orange-300 m-5 ml-1 cursor-pointer hover:text-orange-200 ff-main"
+          >
+            Reset it
+          </NavLink>
+        </p>
         <p className="text-white m-5 mr-4 ml-2 ff-main">Don't have an account?
           <NavLink
             to="/auth"

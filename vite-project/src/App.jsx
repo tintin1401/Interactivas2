@@ -8,6 +8,7 @@ import { UserProfile } from './components/routes/UserProfile.jsx';
 import { ComponentProvider } from './components/hooks/useComponentContext.jsx';
 import { ActivityDetails } from './components/routes/ActivityDetails.jsx';
 import { SearchResults } from './components/routes/SearchResults.jsx';
+import { ForgotPassword } from './components/password/ForgotPassword.jsx';
 /**
  * Renders the main application component.
  *
@@ -24,6 +25,7 @@ export function App() {
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/details" element={<ActivityDetails />} />
         <Route path="/search-results" element={<SearchResults />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
       </ComponentProvider>
