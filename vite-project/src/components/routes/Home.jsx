@@ -47,7 +47,7 @@ function Home() {
     };
 
     if (!user || !user.id) {
-        return null; // or you can return a loader here if you want to display something while redirecting
+        return null; 
     }
 
     
