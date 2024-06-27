@@ -35,7 +35,7 @@ const Sidebar = ({sidebarToggle}) =>{
 
         <div className='flex items-center justify-center m-10'>
           <NavLink to="/profile">
-              <img className='block rounded-[50%] w-20 object-cover' src="https://randomuser.me/api/portraits/women/31.jpg" alt="User Profile"/>
+              <img className='block rounded-[50%] w-20 object-cover' src="./src/assets/imgs/profile-icon.svg" alt="User Profile"/>
           </NavLink>
         </div>
 

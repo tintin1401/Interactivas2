@@ -35,7 +35,7 @@ export function Login() {
       setCurrentComponent('Home');
       navigate('/home');
     } catch (error) {
-      console.error('Login error:', error);
+      //console.error('Login error:', error);
       setError('Invalid credentials, please try again.');
     }
   };

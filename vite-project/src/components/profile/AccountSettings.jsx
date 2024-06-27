@@ -26,7 +26,7 @@ export function AccountSettings() {
         <section>
             <h1 className='font-bold text-blue-700 text-3xl mb-2 pt-4'>Account Settings</h1>
             <div className="flex items-center gap-4 mb-8">
-                <img className='block rounded-[50%] w-20 object-cover' src="https://randomuser.me/api/portraits/women/31.jpg" alt="User Profile" />
+                <img className='block rounded-[50%] w-20 object-cover' src="./src/assets/imgs/profilev2-icon.svg" alt="User Profile" />
                 <p className='text-md font-medium'>{user.name}</p>
             </div>
             <div className="grid md:grid-cols-[auto_auto] gap-2 ">
